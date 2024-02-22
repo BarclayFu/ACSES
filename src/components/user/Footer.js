@@ -12,11 +12,8 @@ export const Footer = () => {
     <footer className="px-2 sm:px-0">
       <div className="w-full h-auto bg-gray-100">
         <div className="container mx-auto py-4">
-          <div className="grid gap-5  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
             <div className="">
-              <h1 className="text-2xl text-green-900 font-semibold">
-                StemCodingLab
-              </h1>
               <div className="space-y-2 mt-2">
                 <p className="font-medium text-base">Contact Us</p>
                 <div className="flex space-x-2">
@@ -49,9 +46,8 @@ export const Footer = () => {
               </div>
             </div>
             <div className="">
-              <h1 className="text-base text-green-900 font-medium">
-                Popular Courses
-              </h1>
+            <div className="space-y-2 mt-2">
+            <p className="font-medium text-base"> Popular Courses </p>
               <div className="flex flex-col mt-4 font-normal">
                 <Link
                   to="/"
@@ -84,10 +80,10 @@ export const Footer = () => {
                 </Link>
               </div>
             </div>
+            </div>
             <div className="">
-              <h1 className="text-base text-green-900 font-medium">
-                Customer Services
-              </h1>
+            <div className="space-y-2 mt-2">
+            <p className="font-medium text-base"> Customer Services </p>
               <div className="flex flex-col mt-4 font-normal">
                 <Link
                   to="/"
@@ -115,6 +111,7 @@ export const Footer = () => {
                 </Link>
                 
               </div>
+            </div>
             </div>
 
           </div>
