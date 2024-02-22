@@ -1,8 +1,7 @@
 import React from "react";
 import {
   AiFillEnvironment,
-  AiOutlinePhone,
-  AiOutlineRadarChart,
+  AiOutlinePhone
 } from "react-icons/ai";
 
 export const TopHeader = () => {
