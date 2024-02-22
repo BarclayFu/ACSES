@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 export const Banner = () => {
   return (
-    <div className="container mx-auto mt-1 sm:mt-5">
+    <div className="container mx-auto mt-1 sm:mt-5 h-[30rem]">
       <div className="md:flex md:gap-5">
-        <div className="bg-gray-100 p-3 rounded-xl hidden lg:block w-full min-w-[280px]  h-80">
-          <ul className="space-y-14">
-            <li className="text-gray-600 text-lg hover:text-blue-300 hover:bg-blue-100/40 px-2 rounded-md group duration-300 ease-out">
+        <div className="bg-gray-100 p-3 rounded-xl hidden lg:block w-full min-w-[280px] h-[30rem]">
+          <ul className="space-y-1">
+            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
                 <span >Artificial Intelligence</span>
                 <span className="hidden group-hover:block">
@@ -52,6 +52,7 @@ export const Banner = () => {
           showThumbs={false}
           showStatus={false}
           interval={4000}
+          className="w-200 h-[40rem]"
         >
           <div>
             <img
