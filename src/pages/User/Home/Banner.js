@@ -12,100 +12,37 @@ export const Banner = () => {
           <ul className="space-y-1">
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
+                <span >Artificial Intelligence</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
               </Link>
             </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
+            <li className="text-gray-600 text-lg hover:text-blue-300 hover:bg-blue-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
+                <span>Data Structure</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
               </Link>
             </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
+            <li className="text-gray-600 text-lg hover:text-blue-300 hover:bg-blue-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
+                <span>Algorithm</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
               </Link>
             </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
+            <li className="text-gray-600 text-lg hover:text-blue-300 hover:bg-blue-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
+                <span>Cybersecurity</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
               </Link>
             </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
-              <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
-                <span className="hidden group-hover:block">
-                  <FaArrowRight />
-                </span>
-              </Link>
-            </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
-              <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
-                <span className="hidden group-hover:block">
-                  <FaArrowRight />
-                </span>
-              </Link>
-            </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
-              <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
-                <span className="hidden group-hover:block">
-                  <FaArrowRight />
-                </span>
-              </Link>
-            </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
-              <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
-                <span className="hidden group-hover:block">
-                  <FaArrowRight />
-                </span>
-              </Link>
-            </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
-              <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
-                <span className="hidden group-hover:block">
-                  <FaArrowRight />
-                </span>
-              </Link>
-            </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
-              <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
-                <span className="hidden group-hover:block">
-                  <FaArrowRight />
-                </span>
-              </Link>
-            </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
-              <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
-                <span className="hidden group-hover:block">
-                  <FaArrowRight />
-                </span>
-              </Link>
-            </li>
-            <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
-              <Link to="/" className="flex justify-between items-center">
-                <span>This is a filter(TBA)</span>
-                <span className="hidden group-hover:block">
-                  <FaArrowRight />
-                </span>
-              </Link>
-            </li>
+            
           </ul>
         </div>
         {/* carousel */}
