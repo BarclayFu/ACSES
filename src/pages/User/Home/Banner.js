@@ -120,7 +120,7 @@ export const Banner = () => {
             <img
               loading="lazy"
               className="w-full object-fill rounded-xl h-32 sm:h-52 md:h-80"
-              src="https://icms-image.slatic.net/images/ims-web/22aa0f64-5ce4-4163-b139-8e13bac1fd4a.jpg"
+              src="https://f5p.63f.myftpupload.com/wp-content/uploads/2020/12/Slider-03a.jpg"
               alt=""
             />
           </div>

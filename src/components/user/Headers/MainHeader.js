@@ -39,7 +39,7 @@ export const MainHeader = () => {
   };
 
   return (
-    <div className="w-full h-14 bg-[#f85606] text-gray-100  px-2 sm:px-0 sticky top-0 z-40 shadow-md shadow-gray-400 ">
+    <div className="w-full h-20 bg-[#039BD9] text-gray-100  px-2 sm:px-0 sticky top-0 z-40 shadow-md shadow-gray-400 ">
       <div className="container mx-auto flex w-full h-full items-center justify-between space-x-3 relative">
         <div className="flex items-center space-x-3">
           {/* mobile left side menu */}
@@ -56,7 +56,7 @@ export const MainHeader = () => {
           {/* logo area */}
           <div className="xl:min-w-[300px]">
             <Link to="/">
-              <h1 className="text-2xl text-white font-semibold">MegaMart</h1>
+              <h1 className="text-2xl text-white font-semibold"> STEM Coding Lab</h1>
             </Link>
           </div>
         </div>
@@ -67,7 +67,7 @@ export const MainHeader = () => {
               type="search"
               name="search"
               value={searchValue}
-              placeholder="Search Product..."
+              placeholder="Search Course..."
               className="bg-transparent text-black px-2 py-2 focus:outline-none sm:w-full"
               onChange={(e) => setSearchValue(e.target.value)}
             />
