@@ -57,43 +57,30 @@ export const Footer = () => {
                   to="/"
                   className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
                 >
-                  Groceries
+                  Robotics/Advanced Manufacturing
                 </Link>
                 <Link
                   to="/"
                   className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
                 >
-                  Premium Fruits
+                  Artificial Intelligence
                 </Link>
                 <Link
                   to="/"
                   className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
                 >
-                  Home & Kitchen
+                  Cybersecurity
+                </Link>
+                <Link
+                  to="/"
+                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear">
+                  Game Design & Animation
                 </Link>
                 <Link
                   to="/"
                   className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
                 >
-                  Fashon
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  Toys & Luggage
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  Electonics
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  Home Improvement
+                  Healthcare/BioTech
                 </Link>
               </div>
             </div>
@@ -126,28 +113,10 @@ export const Footer = () => {
                 >
                   Privacy Policy
                 </Link>
-                <Link
-                  to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  E-waste Policy
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  Concellation & Return Policy
-                </Link>
+                
               </div>
             </div>
-            <div className="">
-              <h1 className="text-base text-green-900 font-medium">
-                Download App
-              </h1>
-              <div>
-                <img src={image} className="max-w-full h-12" alt="" />
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
