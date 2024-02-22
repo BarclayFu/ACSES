@@ -12,7 +12,7 @@ export const Banner = () => {
           <ul className="space-y-1">
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Women's & Girls' Fashion</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -20,7 +20,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Health & Beauty</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -28,7 +28,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Watches, Bags, Jewellery</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -36,7 +36,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Men's & Boys' Fashion</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -44,7 +44,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Mother & Baby</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -52,7 +52,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Electronics Devices</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -60,7 +60,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>TV & Home Appliances</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -68,7 +68,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Electronic Accessories</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -76,7 +76,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Groceries</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -84,7 +84,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Home & Lifestyle</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -92,7 +92,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Sports & Outdoors</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
@@ -100,7 +100,7 @@ export const Banner = () => {
             </li>
             <li className="text-gray-600 text-sm hover:text-orange-600 hover:bg-red-100/40 px-2 rounded-md group duration-300 ease-out">
               <Link to="/" className="flex justify-between items-center">
-                <span>Automotive & Motorbike</span>
+                <span>This is a filter(TBA)</span>
                 <span className="hidden group-hover:block">
                   <FaArrowRight />
                 </span>
