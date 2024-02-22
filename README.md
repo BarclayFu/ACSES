@@ -44,11 +44,11 @@ Asynchronous Computer Science Education System(ACSES)</h3>
     <a href="https://drive.google.com/drive/folders/1BAFZ7lkx0WTJkh_h7zX5Cp0UcQGpkZYN?usp=drive_link"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/BarclayFu/SCL">View Demo</a>
+    <a href="https://github.com/BarclayFu/ACSES">View Demo</a>
     ·
-    <a href="https://github.com/BarclayFu/SCL/issues">Report Bug</a>
+    <a href="https://github.com/BarclayFu/ACSES/issues">Report Bug</a>
     ·
-    <a href="https://github.com/BarclayFu/SCL/issues">Request Feature</a>
+    <a href="https://github.com/BarclayFu/ACSES/issues">Request Feature</a>
   </p>
 </div>
 
