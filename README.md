@@ -146,7 +146,7 @@ Project Link: [https://github.com/BarclayFu/SCL](https://github.com/BarclayFu/SC
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/BarclayFu/SCL.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/BarclayFu/ACSES.svg?style=for-the-badge
 [contributors-url]: https://github.com/BarclayFu/ACSES/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/BarclayFu/SCL.svg?style=for-the-badge
 [forks-url]: https://github.com/BarclayFu/ACSES/network/members
