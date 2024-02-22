@@ -15,7 +15,7 @@ export const Footer = () => {
           <div className="grid gap-5  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <div className="">
               <h1 className="text-2xl text-green-900 font-semibold">
-                MegaMart
+                StemCodingLab
               </h1>
               <div className="space-y-2 mt-2">
                 <p className="font-medium text-base">Contact Us</p>
@@ -24,8 +24,8 @@ export const Footer = () => {
                     <AiOutlineWhatsApp />
                   </p>
                   <div className="text-sm">
-                    <p>WhatsApp</p>
-                    <p>+880 1983183452</p>
+                    <p>Call Us</p>
+                    <p>+1 412-426-3523</p>
                   </div>
                 </div>
                 <div className="flex space-x-2">
@@ -33,8 +33,8 @@ export const Footer = () => {
                     <AiOutlinePhone />
                   </p>
                   <div className="text-sm">
-                    <p>Call Us</p>
-                    <p>+880 1983183452</p>
+                    <p>Fax</p>
+                    <p>+1 866-578-4147</p>
                   </div>
                 </div>
                 <div className="flex space-x-2">
@@ -43,14 +43,14 @@ export const Footer = () => {
                   </p>
                   <div className="text-sm">
                     <p>Email Us</p>
-                    <p>megamart@gmail.com</p>
+                    <p>info@stemcodinglab.org</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="">
               <h1 className="text-base text-green-900 font-medium">
-                Popular Categories
+                Popular Courses
               </h1>
               <div className="flex flex-col mt-4 font-normal">
                 <Link
