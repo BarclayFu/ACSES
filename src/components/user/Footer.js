@@ -51,30 +51,30 @@ export const Footer = () => {
               <div className="flex flex-col mt-4 font-normal">
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
                 >
                   Robotics/Advanced Manufacturing
                 </Link>
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
                 >
                   Artificial Intelligence
                 </Link>
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
                 >
                   Cybersecurity
                 </Link>
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear">
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear">
                   Game Design & Animation
                 </Link>
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
                 >
                   Healthcare/BioTech
                 </Link>
@@ -87,25 +87,25 @@ export const Footer = () => {
               <div className="flex flex-col mt-4 font-normal">
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
                 >
                   About Us
                 </Link>
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
                 >
                   Terms & Conditions
                 </Link>
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
                 >
                   FAQ
                 </Link>
                 <Link
                   to="/"
-                  className="hover:text-green-900 hover:ml-1 duration-100 ease-linear"
+                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
                 >
                   Privacy Policy
                 </Link>
