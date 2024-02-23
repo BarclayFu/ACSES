@@ -71,14 +71,14 @@ export const UserLogin = () => {
           <Button name="Login" className="w-full" />
               </Form>
               {error !== "" && <Error error={error} />}
-        <div className="mt-4 mb-3 text-center">
+        {/* <div className="mt-4 mb-3 text-center">
           <span>
             you don't have an account? please{" "}
             <Link to="/register" className="text-[#28a745] font-normal">
               Register here.
             </Link>
           </span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
