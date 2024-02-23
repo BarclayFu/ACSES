@@ -5,7 +5,7 @@ import { BestCategory } from "./BestCategory";
 import { BrandSlider } from "./BrandSlider";
 import { FeaturedProduct } from "./FeaturedProduct";
 import { ForYouProduct } from "./ForYouProduct";
-import { Subscribe } from "./Subscribe";
+// import { Subscribe } from "./Subscribe";
 
 export const Home = () => {
   //set page title
@@ -17,7 +17,7 @@ export const Home = () => {
       <BestCategory />
       <ForYouProduct />
       <BrandSlider />
-      <Subscribe />
+      {/* <Subscribe /> */}
     </>
   );
 };
