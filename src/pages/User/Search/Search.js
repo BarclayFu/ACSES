@@ -34,7 +34,7 @@ export const Search = () => {
 
   if (!isError && !isLoading && isSuccess && products?.length === 0)
     content = (
-      <p className="text-center uppercase font-medium">No Product found!</p>
+      <p className="text-center uppercase font-medium">No Course found!</p>
     );
 
   if (!isError && !isLoading && products?.length > 0)
@@ -47,7 +47,7 @@ export const Search = () => {
 
   return (
     <div className="container mx-auto ">
-      <ContainerHeader title="Search products" />
+      <ContainerHeader title="Search course" />
       <div className=" mb-7 grid gird-cols-1 justify-center xs:justify-start xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-2 gap-y-5">
         {content}
       </div>
