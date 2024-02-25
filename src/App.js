@@ -35,9 +35,9 @@ function App() {
 
   useUserLoggedInQuery();
 
-  if (!userAuthChecked) {
-    return <p className="relative top-1/2 left-1/2">Loading...</p>;
-  }
+  // if (!userAuthChecked) {
+  //   return <p className="relative top-1/2 left-1/2">Loading...</p>;
+  // }
   if (!adminAuthChecked) {
     return <p>Loading...</p>;
   }
