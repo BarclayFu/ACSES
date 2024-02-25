@@ -8,6 +8,7 @@ import { useUserLoginMutation } from "../../features/auth/userAuthApi";
 import { setTitle } from "../../utils/setTitle";
 import { toast } from "react-hot-toast";
 import { Error } from "../../components/ui/Error";
+import axios from 'axios';
 
 export const UserLogin = () => {
   const [email, setEmail] = useState("");
@@ -31,10 +32,27 @@ export const UserLogin = () => {
   }, [isLoading, isSuccess, navigate, resError]);
 
   //user Login Handler
-  const userLoginHandler = (e) => {
+  const userLoginHandler = async (e) => {
     e.preventDefault();
     setError("");
-    userLoggedIn({ email, password });
+  
+    try {
+      // 发送 POST 请求到 Strapi 登录接口
+      const response = await axios.post('http://localhost:1337/api/auth/local', {
+        identifier: email, // Strapi 需要 'identifier' 字段，可以是用户名或邮箱
+        password: password,
+      });
+  
+      // 存储 JWT 到 localStorage，用于后续请求的认证
+      localStorage.setItem('jwt', response.data.jwt);
+  
+      toast.success("Login Successful");
+      navigate("/");
+    } catch (error) {
+      // 处理错误
+      setError(error.response.data.message[0].messages[0].message);
+      console.log(error);
+    }
   };
 
   //set page title
