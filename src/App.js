@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { ProductByCategory } from "./components/user/ProductByCategory";
 import { useUserLoggedInQuery } from "./features/auth/userAuthApi";
 import { useAdminAuthChecked } from "./hooks/useAdminAuthChecked";
@@ -73,7 +73,7 @@ function App() {
           }
         />
 
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={ userAuthChecked ? <Home /> : <Navigate to="/login" />}  />
         <Route
           path="/product-details/:slug/:productId"
           element={<ProductDetails />}

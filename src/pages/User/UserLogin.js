@@ -50,7 +50,7 @@ export const UserLogin = () => {
       navigate("/");
     } catch (error) {
       // 处理错误
-      setError(error.response.data.message[0].messages[0].message);
+      setError("Login Failed");
       console.log(error);
     }
   };
