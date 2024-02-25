@@ -125,14 +125,14 @@ export const MainHeader = () => {
                 </span>
                 <span className="text-base font-medium">Login</span>
               </Link>
-              <span className="px-1"> |</span>
+              {/* <span className="px-1"> |</span> */}
               <Link
                 to="/register"
                 className=" hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
               >
-                <span className="text-base font-medium whitespace-nowrap">
+                {/* <span className="text-base font-medium whitespace-nowrap">
                   Sign Up
-                </span>
+                </span> */}
               </Link>
             </div>
           )}
@@ -147,7 +147,7 @@ export const MainHeader = () => {
           </button>
 
           {/* cart */}
-          <div
+          {/* <div
             className="flex items-center justify-center cursor-pointer"
             onClick={cartOpenHandler}
           >
@@ -157,7 +157,7 @@ export const MainHeader = () => {
             <p className="relative left-1 bottom-4 w-5 h-5 flex items-center justify-center bg-gray-800 text-white rounded-full">
               <span>{cartItems.length > 0 ? cartItems.length : "0"}</span>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* this form for mobile devices */}

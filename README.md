@@ -44,11 +44,11 @@ Asynchronous Computer Science Education System(ACSES)</h3>
     <a href="https://drive.google.com/drive/folders/1BAFZ7lkx0WTJkh_h7zX5Cp0UcQGpkZYN?usp=drive_link"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/BarclayFu/SCL">View Demo</a>
+    <a href="https://github.com/BarclayFu/ACSES">View Demo</a>
     ·
-    <a href="https://github.com/BarclayFu/SCL/issues">Report Bug</a>
+    <a href="https://github.com/BarclayFu/ACSES/issues">Report Bug</a>
     ·
-    <a href="https://github.com/BarclayFu/SCL/issues">Request Feature</a>
+    <a href="https://github.com/BarclayFu/ACSES/issues">Request Feature</a>
   </p>
 </div>
 
@@ -146,16 +146,16 @@ Project Link: [https://github.com/BarclayFu/SCL](https://github.com/BarclayFu/SC
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/BarclayFu/SCL.svg?style=for-the-badge
-[contributors-url]: https://github.com/BarclayFu/SCL/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/BarclayFu/ACSES.svg?style=for-the-badge
+[contributors-url]: https://github.com/BarclayFu/ACSES/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/BarclayFu/SCL.svg?style=for-the-badge
-[forks-url]: https://github.com/BarclayFu/SCL/network/members
+[forks-url]: https://github.com/BarclayFu/ACSES/network/members
 [stars-shield]: https://img.shields.io/github/stars/BarclayFu/SCL.svg?style=for-the-badge
-[stars-url]: https://github.com/BarclayFu/SCL/stargazers
+[stars-url]: https://github.com/BarclayFu/ACSES/stargazers
 [issues-shield]: https://img.shields.io/github/issues/BarclayFu/SCL.svg?style=for-the-badge
-[issues-url]: https://github.com/BarclayFu/SCL/issues
+[issues-url]: https://github.com/BarclayFu/ACSES/issues
 [license-shield]: https://img.shields.io/github/license/BarclayFu/SCL.svg?style=for-the-badge
-[license-url]: https://github.com/BarclayFu/SCL/blob/master/LICENSE.txt
+[license-url]: https://github.com/BarclayFu/ACSES/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/company/stem-coding-lab-inc/
 [product-screenshot]: https://placehold.co/600x400/png

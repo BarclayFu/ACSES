@@ -13,7 +13,7 @@ import { ContainerHeader } from "../../../components/user/ContainerHeader";
 export const BrandSlider = () => {
   return (
     <div className="container mx-auto">
-      <ContainerHeader title="Populer Brands" />
+      <ContainerHeader title="Suggested Courses" />
       <Swiper
         modules={[Pagination, Autoplay]}
         slidesPerView={4}
