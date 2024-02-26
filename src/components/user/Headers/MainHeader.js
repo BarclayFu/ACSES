@@ -127,14 +127,17 @@ export const MainHeader = () => {
               </Link>
               {/* <span className="px-1"> |</span> */}
               <Link
-                to="/register"
+                to="/login"
                 className=" hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
               >
+                <LogoutButton className="text-base font-medium whitespace-nowrap"/>
                 {/* <span className="text-base font-medium whitespace-nowrap">
-                  Sign Up
+                  log out 
                 </span> */}
+                
               </Link>
             </div>
+            
           )}
 
           {/* search icon for small devices */}
@@ -184,4 +187,23 @@ export const MainHeader = () => {
       </div>
     </div>
   );
+};
+
+const LogoutButton = () => {
+  const dispatch = useDispatch(); // 如果使用Redux
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // 清除用户状态
+    dispatch({ type: 'LOGOUT' }); // 例如，使用Redux dispatch来清除用户状态
+
+    // 清除认证信息，如JWT或cookies
+    localStorage.removeItem('jwt'); // 假设JWT存储在localStorage中
+    // 或者：cookies.remove('jwt'); // 如果使用cookies
+
+    // 重定向到登录页面或其他页面
+    navigate('/login');
+  };
+
+  return <button onClick={handleLogout}>Logout</button>;
 };
