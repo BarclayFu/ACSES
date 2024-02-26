@@ -37,10 +37,10 @@ export const userAuthApi = apiSlice.injectEndpoints({
     }),
     userLoggedIn: builder.query({
       query: () => ({
-        url: "/user/me",
+        url: "http://localhost:1337/api/users/me",
         headers: {
           Authorization: `Bearer ${
-            localStorage.getItem("userAuth")?.accessToken
+            localStorage.jwt
           }`,
         },
       }),
