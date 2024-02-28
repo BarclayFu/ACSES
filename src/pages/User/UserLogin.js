@@ -23,7 +23,7 @@ export const UserLogin = () => {
   useEffect(() => {
     if (!isLoading && isSuccess) {
       toast.success("Login Successfull");
-      navigate("/");
+      navigate("/home");
     }
     if (!isLoading && !isSuccess && resError) {
         setError(resError.data?.message);
@@ -47,7 +47,7 @@ export const UserLogin = () => {
       localStorage.setItem('jwt', response.data.jwt);
   
       toast.success("Login Successful");
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       // 处理错误
       setError("Login Failed");

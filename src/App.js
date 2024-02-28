@@ -74,6 +74,7 @@ function App() {
         />
 
         <Route path="/" element={ userAuthChecked ? <Home /> : <Navigate to="/login" />}  />
+        <Route path="/home" element={  <Home />  }  />
         <Route
           path="/product-details/:slug/:productId"
           element={<ProductDetails />}
