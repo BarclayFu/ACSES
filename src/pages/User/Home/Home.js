@@ -7,6 +7,7 @@ import VideoComponent from './VideoComponent';
 // import { ForYouProduct } from "./ForYouProduct";
 // import { Subscribe } from "./Subscribe";
 // import { BestCategory } from "./BestCategory";
+import {Program} from "../../../pages/User/Course/Program";
 
 export const Home = () => {
   //set page title
@@ -15,7 +16,8 @@ export const Home = () => {
     <>
       <Banner />
       <BrandSlider />
-      <VideoComponent/>
+      {/* <VideoComponent/> */}
+      <Program/>
     </>
   );
 };
