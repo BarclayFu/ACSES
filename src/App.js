@@ -28,6 +28,9 @@ import { PrivateRoute } from "./routes/admin/PrivateRoute";
 import { PublicRoute } from "./routes/admin/PublicRoute";
 import { UserPrivateRoute } from "./routes/user/UserPrivateRoute";
 import { UserPublicRoute } from "./routes/user/UserPublicRoute";
+import { Program } from "./pages/User/Course/Program";
+import { ProgramDetail } from "./pages/User/Course/ProgramDetail";
+import { SessionDetail } from "./pages/User/Course/SessionDetail";
 
 function App() {
   const adminAuthChecked = useAdminAuthChecked();
@@ -64,6 +67,7 @@ function App() {
             </UserPublicRoute>
           }
         />
+
         <Route
           path="/login"
           element={
@@ -72,6 +76,11 @@ function App() {
             </UserPublicRoute>
           }
         />
+        
+
+
+        <Route path="/programs/:programId" element={<ProgramDetail />} />
+        <Route path="/programs/:programId/sessions/:sessionId/" element={<SessionDetail />} />
 
         <Route path="/" element={ userAuthChecked ? <Home /> : <Navigate to="/login" />}  />
         <Route path="/home" element={  <Home />  }  />

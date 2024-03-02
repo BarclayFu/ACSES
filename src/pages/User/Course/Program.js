@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import {Session} from '../Course/Session';
+import { useNavigate } from 'react-router-dom';
 
 export const Program = () => {
   const [programs, setPrograms] = useState([]);
@@ -28,6 +29,13 @@ export const Program = () => {
     }).join('\n');
   };
 
+  const navigate = useNavigate();
+
+  const handleProgramClick = (programId) => {
+    navigate(`/programs/${programId}`);
+  };
+
+
   return (
 <div class="container mx-auto">
 <div class="my-5">
@@ -36,7 +44,7 @@ export const Program = () => {
 
 <div class="container mx-auto flex flex-wrap -mx-2 gap-4"  >
   {programs.map(program => (
-    <div key={program.id} className="p-4 border-2 border-blue-500 rounded-lg w-1/4 mb-2 md:mb-4">
+    <div key={program.id} className="p-4 border-2 border-blue-500 rounded-lg w-1/4 mb-2 md:mb-4" onClick={() => handleProgramClick(program.id)}>
       {program.attributes.Cover.data && (
         <img
           src={`http://localhost:1337${program.attributes.Cover.data.attributes.url}`}

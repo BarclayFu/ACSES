@@ -1,29 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-// Session组件
-export const Session = ({ sessionId, grade }) => {
-  const [sessionData, setSessionData] = useState(null);
+export const Session = ({ programId }) => {
+  const [sessions, setSessions] = useState([]);
+  const navigate = useNavigate();
 
-  // 从后端获取会话数据
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(`/api/sessions/${sessionId}?grade=${grade}`);
-      setSessionData(result.data);
-    };
+    const token = localStorage.getItem('jwt');
+    fetch(`http://localhost:1337/api/sessions?populate=*&filters[program][id][$eq]=${programId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      setSessions(data.data);
+    })
+    .catch(error => console.error('Error fetching sessions:', error));
+  }, [programId]);
 
-    fetchData();
-  }, [sessionId, grade]);
-
-  if (!sessionData) {
-    return <div>Loading...</div>;
-  }
+  // 这里可以添加更多的解析函数，例如解析objectives等
+  const handleSessionClick = (sessionId) => {
+    navigate(`/programs/${programId}/sessions/${sessionId}`);
+  };
 
   return (
     <div>
-      <h2>{sessionData.title}</h2>
-      <p>{sessionData.overview}</p>
-      {/* 其他会话内容 */}
+      {sessions.map(session => (
+        <div key={session.id} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleSessionClick(session.id)}>
+          <h2 className="text-lg font-semibold text-gray-800">{session.attributes.Title}</h2>
+          <p className="text-gray-600">{session.attributes.Duration}</p>
+
+        </div>
+      ))}
     </div>
   );
 };
