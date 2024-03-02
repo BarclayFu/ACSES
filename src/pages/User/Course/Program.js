@@ -29,14 +29,19 @@ export const Program = () => {
   };
 
   return (
-<div className="container mx-auto mt-1 sm:mt-5">
+<div class="container mx-auto">
+<div class="my-5">
+  <h1 class="capitalize text-xl font-medium">Published Courses</h1>
+</div>
+
+<div class="container mx-auto flex flex-wrap -mx-2 gap-4"  >
   {programs.map(program => (
-    <div key={program.id} className="mb-6 p-4 border-2 border-blue-500 rounded-lg">
+    <div key={program.id} className="p-4 border-2 border-blue-500 rounded-lg w-1/4 mb-2 md:mb-4">
       {program.attributes.Cover.data && (
         <img
           src={`http://localhost:1337${program.attributes.Cover.data.attributes.url}`}
           alt={program.attributes.Title}
-          style={{ width: '200px', height: '150px' }}
+          style={{ width: '240px', height: '150px' }}
         />
       )}
       <h1 className="text-xl font-semibold text-gray-800">{program.attributes.Title}</h1>
@@ -52,6 +57,8 @@ export const Program = () => {
     </div>
   ))}
 </div>
+</div>
+
 
 
   );
