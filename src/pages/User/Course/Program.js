@@ -61,7 +61,6 @@ export const Program = () => {
         <p>Focus Area: <span className="text-gray-600">{program.attributes.FocusArea}</span></p>
         {/* 其他属性 */}
       </div>
-      {/* <Session programId={program.id} /> */}
     </div>
   ))}
 </div>
