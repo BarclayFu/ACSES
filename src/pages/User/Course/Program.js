@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import {Session} from '../Course/Session';
+import { useNavigate } from 'react-router-dom';
 
 export const Program = () => {
   const [programs, setPrograms] = useState([]);
@@ -28,10 +29,17 @@ export const Program = () => {
     }).join('\n');
   };
 
+  const navigate = useNavigate();
+
+  const handleProgramClick = (programId) => {
+    navigate(`/programs/${programId}`);
+  };
+
+
   return (
 <div className="container mx-auto mt-1 sm:mt-5">
   {programs.map(program => (
-    <div key={program.id} className="mb-6 p-4 border-2 border-blue-500 rounded-lg">
+    <div key={program.id} className="mb-6 p-4 border-2 border-blue-500 rounded-lg" onClick={() => handleProgramClick(program.id)}>
       {program.attributes.Cover.data && (
         <img
           src={`http://localhost:1337${program.attributes.Cover.data.attributes.url}`}
