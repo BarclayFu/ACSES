@@ -25,7 +25,7 @@ export const SessionDetail = () => {
   }
 
   return (
-    <div>
+    <div className="mb-6 p-4 border-2 border-blue-500 rounded-lg">
       <h1>{session.attributes.Title}</h1>
       {/* 这里可以展示更多的content详情 */}
       <h2>Tags: {session.attributes.Tags}</h2>
