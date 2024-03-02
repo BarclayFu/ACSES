@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import { Session } from './Session';
+import { Session } from './Session';
 
 export const ProgramDetail = () => {
   const [program, setProgram] = useState(null);
@@ -35,7 +35,7 @@ export const ProgramDetail = () => {
       )}
       <h1 className="text-xl font-semibold text-gray-800">{program.attributes.Title}</h1>
       {/* 这里可以添加更多的program详情 */}
-      {/* <Session programId={programId} /> */}
+      <Session programId={programId} />
     </div>
   );
 };

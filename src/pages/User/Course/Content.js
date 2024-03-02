@@ -5,22 +5,26 @@ export const Content = ({ sessionId }) => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch(`http://localhost:1337/api/contents?filters[session][id][$eq]=${sessionId}`, {
+    fetch(`http://localhost:1337/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
     })
     .then(response => response.json())
-    .then(data => setContents(data.data))
+    .then(data => {
+      console.log(data); // 打印数据看看是否正确返回
+      setContents(data.data);
+    })
     .catch(error => console.error('Error fetching content:', error));
   }, [sessionId]);
+
 
   return (
     <div>
       {contents.map(content => (
-        <div key={content.id}>
-          <h3>{content.attributes.title}</h3>
-          <p>{content.attributes.description}</p>
+        <div key={content.id} className="mb-6 p-4 border-2 border-gray-300 rounded-lg">
+          <h1>{content.attributes.Title}</h1>
+          <p>{content.attributes.Link}</p>
           {/* Display other content attributes here */}
         </div>
       ))}
