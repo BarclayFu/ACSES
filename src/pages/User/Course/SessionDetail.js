@@ -25,13 +25,20 @@ export const SessionDetail = () => {
   }
 
   return (
-    <div className="mb-6 p-4 border-2 border-blue-500 rounded-lg">
-      <h1>{session.attributes.Title}</h1>
+    <div
+      className="mb-6 p-4 border-2 border-blue-500 rounded-lg"
+      style={{ margin: "20px auto",maxWidth:500,backgroundColor:"#fff" }}
+    >
+      
       {/* 这里可以展示更多的content详情 */}
-      <h2>Tags: {session.attributes.Tags}</h2>
-      <h2>Duration: {session.attributes.Duration}</h2>
-      <h2>Objective: {session.attributes.Objective}</h2>
-      <h2>Audience: {session.attributes.Audience}</h2>
+      <div style={{ backgroundColor: "#fff",borderRadius:10,padding:20,marginBottom:20 }}>
+      <div style={{ fontWeight: "bold",marginBottom:10 }}>{session.attributes.Title}</div>
+        <div>Tags: {session.attributes.Tags}</div>
+        <div>Duration: {session.attributes.Duration}</div>
+        <div>Objective: {session.attributes.Objective}</div>
+        <div>Audience: {session.attributes.Audience}</div>
+      </div>
+
       <Content sessionId={sessionId} />
     </div>
   );

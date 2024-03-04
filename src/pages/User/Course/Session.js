@@ -7,7 +7,8 @@ export const Session = ({ programId }) => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch(`http://localhost:1337/api/sessions?populate=*&filters[program][id][$eq]=${programId}`, {
+    // fetch(`http://localhost:1337/api/sessions?populate=*&filters[program][id][$eq]=${programId}`, {
+    fetch(`http://localhost:1337/api/sessions?populate=Cover,sessions&program=${programId}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -29,7 +30,9 @@ export const Session = ({ programId }) => {
       {sessions.map(session => (
         <div key={session.id} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleSessionClick(session.id)}>
           <h2 className="text-lg font-semibold text-gray-800">{session.attributes.Title}</h2>
-          <p className="text-gray-600">{session.attributes.Duration}</p>
+          <p className="text-gray-600">Duration: {session.attributes.Duration}</p>
+          <p className="text-gray-600">Tags: {session.attributes.Tags}</p>
+          <p className="text-gray-600">Audience: {session.attributes.Audience}</p>
 
         </div>
       ))}
