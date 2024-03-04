@@ -8,7 +8,8 @@ export const Content = ({ sessionId }) => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch(`http://localhost:1337/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
+    // fetch(`http://localhost:1337/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
+    fetch(`http://localhost:1337/api/contents?populate=*&session=${sessionId}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -27,11 +28,22 @@ export const Content = ({ sessionId }) => {
   };
 
   return (
+    // <div>
+    //   {contents.map(content => (
+    //     <div key={content.id} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleContentClick(content.id)}>
+    //       <h1>{content.attributes.Title}</h1>
+    //       <p>{content.attributes.Link}</p>
+    //       {/* Display other content attributes here */}
+    //     </div>
+    //   ))}
+    // </div>
     <div>
       {contents.map(content => (
-        <div key={content.id} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleContentClick(content.id)}>
+        <div key={content.id} style={{backgroundColor:"#fff"}} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleContentClick(content.id)}>
           <h1>{content.attributes.Title}</h1>
-          <p>{content.attributes.Link}</p>
+          {content.attributes.Link.includes(".mp4") && <video style={{width:300}} src={content.attributes.Link}></video>}
+          {content.attributes.Link.includes(".pdf") && <div>{content.attributes.Link.split("/").pop()}</div>}
+          {/* <p>{content.attributes.Link}</p > */}
           {/* Display other content attributes here */}
         </div>
       ))}

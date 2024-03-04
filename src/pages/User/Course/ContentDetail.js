@@ -26,13 +26,44 @@ export const ContentDetail = () => {
   }
 
   return (
-    <div className="mb-6 p-4 border-2 border-blue-500 rounded-lg">
-      <h1>{detail.attributes.Title}</h1>
-      <h1>{detail.attributes.Link}</h1>
+    // <div className="mb-6 p-4 border-2 border-blue-500 rounded-lg">
+    //   <h1>{detail.attributes.Title}</h1>
+    //   <h1>{detail.attributes.Link}</h1>
 
-      <video controls>
-        <source src={`http://localhost:1337${detail.attributes.Material.data[0].attributes.url}`} type="video/mp4" />
-      </video>
+    //   <video controls>
+    //     <source src={`http://localhost:1337${detail.attributes.Material.data[0].attributes.url}`} type="video/mp4" />
+    //   </video>
+    // </div>
+    <div
+      className="mb-6 p-4 border-2 border-blue-500 rounded-lg"
+      style={{ margin: "20px auto", maxWidth: 500, backgroundColor: "#fff" }}
+    >
+      <h1>{detail.attributes.Title}</h1>
+
+      {/* {detail.attributes.Material && (
+        <video controls>
+          <source
+            src={`http://localhost:1337${detail.attributes.Material.data[0].attributes.url}`}
+            type="video/mp4"
+          />
+        </video>
+      )} */}
+
+      {detail.attributes.Link.includes(".pdf") && (
+        // <div>{detail.attributes.Link.split("/").pop()}</div>
+        <iframe
+        src={detail.attributes.Link}
+        style={{ width: '100%', height: '500px' }}
+        frameBorder="0"
+      >
+        This browser does not support PDFs. Please download the PDF to view it: 
+        <a href={detail.attributes.Link}>Download PDF</a>.
+      </iframe>
+      )}
+
+      {detail.attributes.Link.includes(".mp4") && (
+        <video controls={'controls'} style={{ width: 300 }} src={detail.attributes.Link}></video>
+      )}
     </div>
   );
 };
