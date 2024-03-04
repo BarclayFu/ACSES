@@ -8,8 +8,7 @@ export const Content = ({ sessionId }) => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    // fetch(`http://localhost:1337/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
-    fetch(`http://localhost:1337/api/contents?populate=*&session=${sessionId}`, {
+    fetch(`http://localhost:1337/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

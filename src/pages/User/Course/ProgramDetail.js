@@ -24,6 +24,15 @@ export const ProgramDetail = () => {
     return <div>Loading...</div>;
   }
 
+  const parseOverview = (overview) => {
+    return overview.map((block) => {
+      if (block.type === 'paragraph') {
+        return block.children.map((child) => child.text).join('');
+      }
+      return '';
+    }).join('\n');
+  };
+
   return (
     <div className="container mx-auto mt-1 border-blue-500 sm:mt-5" style={{ margin: "20px auto", maxWidth: 500, backgroundColor: "#fff",padding:20 }}>
       {/* {program.attributes.Cover.data && (
@@ -36,9 +45,10 @@ export const ProgramDetail = () => {
       <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center',backgroundColor:"#fff", borderRadius:10, padding:20, marginBottom:20}} >
         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} className="flex flex-col">
           <h1 className="text-xl font-semibold text-gray-800">{program.attributes.Title}</h1>
+          <p className="mt-2 text-gray-600">{parseOverview(program.attributes.Overview)}</p>
         <div>Duration: {program.attributes.Duration}</div>
-        <div>Objective: {program.attributes.Objective}</div>
         <div>Audience: {program.attributes.Audience}</div>
+        <div>Tags: {program.attributes.Tags}</div>
         </div>
       </div>
       {/* 这里可以添加更多的program详情 */}

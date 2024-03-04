@@ -40,14 +40,14 @@ export const ContentDetail = () => {
     >
       <h1>{detail.attributes.Title}</h1>
 
-      {/* {detail.attributes.Material && (
+      {detail.attributes.Material && (
         <video controls>
           <source
             src={`http://localhost:1337${detail.attributes.Material.data[0].attributes.url}`}
             type="video/mp4"
           />
         </video>
-      )} */}
+      )}
 
       {detail.attributes.Link.includes(".pdf") && (
         // <div>{detail.attributes.Link.split("/").pop()}</div>
