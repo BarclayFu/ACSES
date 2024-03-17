@@ -82,29 +82,39 @@ export const MainHeader = () => {
         <div className="flex items-center space-x-3 relative">
           {userAccessToken ? (
             <>
-              <div className="items-center space-x-2 group hover:cursor-pointer hidden sm:flex" >
+              <div className="flex items-center space-x-2 group hover:cursor-pointer" >
                  <Link
-                to="/profile"
-                className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
-              >
-                <div className="w-7 h-7 ">
-                  <img
-                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                    alt="profile"
-                    className="w-full h-full rounded-full"
-                  />
-                </div>
-                <div className="whitespace-nowrap leading-4">
-                  <p className="text-[12px]">
-                    Hello, 
-                  </p>
-                  <p className="text-[13px] font-semibold capitalize select-none">
-                    Accout
-                  </p>
-                </div>
-              </Link>
+                    to="/profile"
+                    className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100">
+                    {/* <div className="w-7 h-7 ">
+                      <img
+                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                        alt="profile"
+                        className="w-full h-full rounded-full"
+                      />
+                    </div> */}
+                    <span className="text-2xl text-white pr-1">
+                      <AiOutlineUser />
+                    </span>
+                    <span className="text-base font-medium">Profile</span>
+                    {/* <div className="whitespace-nowrap leading-4"> */}
+                      {/* <p className="text-[12px]">
+                        Hello, 
+                      </p> */}
+                      {/* <p className="text-[13px] font-semibold capitalize select-none">
+                        Profile
+                      </p> */}
+                      
+                    {/* </div> */}
+                </Link>
                 {/* user account menu */}
-                <LogoutButton className="text-base font-medium whitespace-nowrap"/>
+                {/* <div className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100">
+                  <ProfileButton className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"/>
+                </div> */}
+                <span className="text-base mx-2">|</span>
+                <div className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100">
+                  <LogoutButton className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"/>
+                </div>
               </div>
             </>
           ) : (
