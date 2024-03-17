@@ -58,28 +58,32 @@ export const SessionDetail = () => {
   }
 
   return (
-    <div
-      className="mb-6 p-4 border-2 border-blue-500 rounded-lg"
-      style={{ margin: "20px auto",maxWidth:500,backgroundColor:"#fff" }}
-    >
+    <div className="w-full bg-white" >
       
       {/* 这里可以展示更多的content详情 */}
       <div style={{ backgroundColor: "#fff",borderRadius:10,padding:20,marginBottom:20 }}>
-      <div style={{ fontWeight: "bold",marginBottom:10 }}>{session.attributes.Title}</div>
-      <div>
-          <strong>Overview:</strong>
-          {renderOverview(session.attributes.Overview)}
-        </div>
+        <div style={{ fontWeight: "bold", textAlign: "center", fontSize: "1.5rem", marginBottom: "10px" }}>{session.attributes.Title}</div>
+        <Content sessionId={sessionId} />
+        {/* 
         <div>Tags: {session.attributes.Tags}</div>
         <div>Duration: {session.attributes.Duration}</div>
-        <div>
-          <strong>Objective:</strong>
-          <ul>{renderObjectives(session.attributes.Objectives)}</ul>
+        <div>Audience: {session.attributes.Audience}</div> */}
+        <div className="bg-white p-4 my-4 rounded-lg shadow">
+          <div className="mb-2">
+            <strong className="font-bold text-lg text-blue-700">Overview:</strong>
+            <div className="mt-2 ml-4 text-gray-700">{renderOverview(session.attributes.Overview)}</div>
+          </div>
         </div>
-        <div>Audience: {session.attributes.Audience}</div>
-      </div>
 
-      <Content sessionId={sessionId} />
+        <div className="bg-white p-4 my-4 rounded-lg shadow">
+          <div className="mb-2">
+            <strong className="font-bold text-lg text-blue-700">Objective:</strong>
+            <ul className="list-disc mt-2 ml-8 text-gray-700">
+              {renderObjectives(session.attributes.Objectives)}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

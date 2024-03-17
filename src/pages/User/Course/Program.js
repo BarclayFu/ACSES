@@ -53,12 +53,12 @@ export const Program = () => {
         />
       )}
       <h1 className="text-xl font-semibold text-gray-800">{program.attributes.Title}</h1>
-      <p className="mt-2 text-gray-600">{parseOverview(program.attributes.Overview)}</p>
+      {/* <p className="mt-2 text-gray-600">{parseOverview(program.attributes.Overview)}</p> */}
       <div className="mt-4">
-        <p>Duration: <span className="text-gray-600">{program.attributes.Duration}</span></p>
+        {/* <p>Duration: <span className="text-gray-600">{program.attributes.Duration}</span></p> */}
         <p>Tags: <span className="text-gray-600">{program.attributes.Tags}</span></p>
-        <p>Audience: <span className="text-gray-600">{program.attributes.Audience}</span></p>
-        <p>Focus Area: <span className="text-gray-600">{program.attributes.FocusArea}</span></p>
+        {/* <p>Audience: <span className="text-gray-600">{program.attributes.Audience}</span></p>
+        <p>Focus Area: <span className="text-gray-600">{program.attributes.FocusArea}</span></p> */}
         {/* 其他属性 */}
       </div>
     </div>
