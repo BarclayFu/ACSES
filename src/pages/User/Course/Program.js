@@ -37,34 +37,34 @@ export const Program = () => {
 
 
   return (
-<div class="container mx-auto">
-<div class="my-5">
-  <h1 class="capitalize text-xl font-medium">Published Courses</h1>
-</div>
-
-<div class="container mx-auto flex flex-wrap -mx-2 gap-4"  >
-  {programs.map(program => (
-    <div key={program.id} className="p-4 border-2 border-blue-500 rounded-lg w-1/4 mb-2 md:mb-4" onClick={() => handleProgramClick(program.id)}>
-      {program.attributes.Cover.data && (
-        <img
-          src={`http://localhost:1337${program.attributes.Cover.data.attributes.url}`}
-          alt={program.attributes.Title}
-          style={{ width: '240px', height: '150px' }}
-        />
-      )}
-      <h1 className="text-xl font-semibold text-gray-800">{program.attributes.Title}</h1>
-      {/* <p className="mt-2 text-gray-600">{parseOverview(program.attributes.Overview)}</p> */}
-      <div className="mt-4">
-        {/* <p>Duration: <span className="text-gray-600">{program.attributes.Duration}</span></p> */}
-        <p>Tags: <span className="text-gray-600">{program.attributes.Tags}</span></p>
-        {/* <p>Audience: <span className="text-gray-600">{program.attributes.Audience}</span></p>
-        <p>Focus Area: <span className="text-gray-600">{program.attributes.FocusArea}</span></p> */}
-        {/* 其他属性 */}
-      </div>
+    <div class="container mx-auto">
+    <div class="my-5">
+      <h1 class="capitalize text-xl font-medium">Published Courses</h1>
     </div>
-  ))}
-</div>
-</div>
+
+    <div class="container mx-auto flex flex-wrap -mx-2 gap-4"  >
+      {programs.map(program => (
+        <div key={program.id} className="p-4 border-2 border-blue-500 rounded-lg w-1/4 mb-2 md:mb-4" onClick={() => handleProgramClick(program.id)}>
+          {program.attributes.Cover.data && (
+            <img
+              src={`http://localhost:1337${program.attributes.Cover.data.attributes.url}`}
+              alt={program.attributes.Title}
+              style={{ width: '300px', height: '150px' }}
+            />
+          )}
+          <h1 className="text-xl font-semibold text-gray-800">{program.attributes.Title}</h1>
+          {/* <p className="mt-2 text-gray-600">{parseOverview(program.attributes.Overview)}</p> */}
+          <div className="mt-1">
+            <p>Duration: <span className="text-gray-600">{program.attributes.Duration}</span></p>
+            <p>Tags: <span className="text-gray-600">{program.attributes.Tags}</span></p>
+            {/* <p>Audience: <span className="text-gray-600">{program.attributes.Audience}</span></p>
+            <p>Focus Area: <span className="text-gray-600">{program.attributes.FocusArea}</span></p> */}
+            {/* 其他属性 */}
+          </div>
+        </div>
+      ))}
+    </div>
+    </div>
 
 
 
