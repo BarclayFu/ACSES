@@ -12,10 +12,11 @@ import { openCart } from "../../../features/cart/cartOpenSlice";
 import { selectCartItems } from "../../../features/cart/cartSelectors";
 import { Menu } from "./Menu";
 import { MobileMenu } from "./MobileMenu";
-
+import { Profile } from "../../../pages/User/Profile/PersonalProfile";
+import { useUserLoginMutation } from "../../../features/auth/userAuthApi";
 export const MainHeader = () => {
   const cartItems = useSelector(selectCartItems);
-  const userAccessToken = useSelector(selectUserAccessToken);
+  const userAccessToken = localStorage.getItem("jwt");
   const userInfo = useSelector(selectUserInfo);
   const [searchValue, setSearchValue] = useState("");
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -37,6 +38,7 @@ export const MainHeader = () => {
       navigate(`/search?search=${searchValue}`);
     }
   };
+
 
   return (
     <div className="w-full h-20 bg-[#039BD9] text-gray-100  px-2 sm:px-0 sticky top-0 z-40 shadow-md shadow-gray-400 ">
@@ -79,40 +81,32 @@ export const MainHeader = () => {
 
         {/* right side */}
         <div className="flex items-center space-x-3 relative">
-          {userAccessToken && userInfo?._id ? (
+          {userAccessToken ? (
             <>
-              <div className="items-center space-x-2 group hover:cursor-pointer hidden sm:flex">
+              <div className="items-center space-x-2 group hover:cursor-pointer hidden sm:flex" >
+                 <Link
+                to="/profile"
+                className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
+              >
                 <div className="w-7 h-7 ">
                   <img
-                    src={
-                      userInfo?.profilePic !== null
-                        ? userInfo.profilePic
-                        : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                    }
+                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                     alt="profile"
                     className="w-full h-full rounded-full"
                   />
                 </div>
                 <div className="whitespace-nowrap leading-4">
                   <p className="text-[12px]">
-                    Hello,{userInfo.name.substring(0, 9)}
+                    Hello, 
                   </p>
                   <p className="text-[13px] font-semibold capitalize select-none">
-                    Orders & Accout
+                    Accout
                   </p>
                 </div>
-                {/* user account menu */}
-                <Menu />
-              </div>
-
-              <Link
-                to="/checkout"
-                className="hidden sm:flex items-center hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
-              >
-                <span className="text-base font-medium mr-0 sm:mr-3">
-                  CheckOut
-                </span>
               </Link>
+                {/* user account menu */}
+                <LogoutButton className="text-base font-medium whitespace-nowrap"/>
+              </div>
             </>
           ) : (
             <div className="hidden sm:flex items-center">
