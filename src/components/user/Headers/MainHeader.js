@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { AiOutlineShopping, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { FaAlignRight } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import {
-  selectUserAccessToken,
   selectUserInfo,
 } from "../../../features/auth/userAuthSelectors";
 import { openCart } from "../../../features/cart/cartOpenSlice";
