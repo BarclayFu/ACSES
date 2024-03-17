@@ -61,9 +61,9 @@ export const ContentDetail = () => {
       </iframe>
       )}
 
-      {/* {detail.attributes.Link.includes(".mp4") && (
+      {detail.attributes.Link.includes(".mp4") && (
         <video controls={'controls'} style={{ width: 300 }} src={detail.attributes.Link}></video>
-      )} */}
+      )}
     </div>
   );
 };

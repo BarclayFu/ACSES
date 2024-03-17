@@ -36,17 +36,37 @@ export const Content = ({ sessionId }) => {
     //     </div>
     //   ))}
     // </div>
+    // <div>
+    //   {contents.map(content => (
+    //     <div key={content.id} style={{backgroundColor:"#fff"}} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleContentClick(content.id)}>
+    //       <h1 style={{ marginLeft: '60px' }}>{content.attributes.Type} - {content.attributes.Title}</h1>
+    //       {content.attributes.Link.includes(".mp4") && <video style={{ width: '60%', height: 'auto', marginLeft: '60px' }} src={content.attributes.Link}></video>}
+    //       {content.attributes.Link.includes(".pdf") && <div>{content.attributes.Link.split("/").pop()}</div>}
+    //       {/* <p>{content.attributes.Link}</p > */}
+    //       {/* Display other content attributes here */}
+    //     </div>
+    //   ))}
+    // </div>
     <div>
       {contents.map(content => (
-        <div key={content.id} style={{backgroundColor:"#fff"}} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleContentClick(content.id)}>
-          <h1>{content.attributes.Type} - {content.attributes.Title}</h1>
-          {/* {content.attributes.Link.includes(".mp4") && <video style={{width:300}} src={content.attributes.Link}></video>} */}
-          {/* {content.attributes.Link.includes(".pdf") && <div>{content.attributes.Link.split("/").pop()}</div>} */}
-          {/* <p>{content.attributes.Link}</p > */}
+        <div key={content.id} className="mb-6 p-4 border border-gray-300 rounded-lg hover:shadow-md" style={{backgroundColor:"#fff"}} onClick={() => handleContentClick(content.id)}>
+          <h1 className="text-xl font-semibold text-gray-800 ml-14 mb-4" style={{ textAlign: "center" }}>{content.attributes.Type} - {content.attributes.Title}</h1>
+          {content.attributes.Link.includes(".mp4") && (
+            <div className="flex justify-center">
+              <video style={{ width: '60%', height: 'auto' }} src={content.attributes.Link} controls></video>
+            </div>
+          )}
+          {content.attributes.Link.includes(".pdf") && (
+            <a href={content.attributes.Link} className="text-blue-600 hover:text-blue-800 ml-14" target="_blank" rel="noreferrer">
+              {content.attributes.Link.split("/").pop()}
+            </a>
+          )}
+          {/* <p className="text-gray-600">{content.attributes.Link}</p> */}
           {/* Display other content attributes here */}
         </div>
       ))}
     </div>
+
   );
 };
 
