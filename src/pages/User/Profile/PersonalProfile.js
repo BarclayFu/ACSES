@@ -4,6 +4,9 @@ import axios from 'axios';
 
 export const Profile = () => {
   const [profile, setProfile] = useState(null);
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
@@ -18,20 +21,30 @@ export const Profile = () => {
     })
     .catch(error => console.error('Error fetching profile:', error));
   }, []);
-
+  
   const resetPassword = () => {
-    axios
-      .post('http://localhost:1337/api/auth/forgot-password', {
-        email: profile.email, // 使用用户的电子邮件地址
-      })
-      .then(response => {
-        alert('重置密码的邮件已发送到您的邮箱。');
-      })
-      .catch(error => {
-        console.error('重置密码时发生错误:', error.response);
-        alert('重置密码时发生错误，请稍后再试。');
-      });
-  }
+    if (newPassword !== confirmPassword) {
+      alert('新密码和确认密码不匹配。');
+      return;
+    }
+    const token = localStorage.getItem('jwt');
+    axios.post('http://localhost:1337/api/auth/change-password', {
+      currentPassword: currentPassword,
+      password: newPassword,
+      passwordConfirmation: confirmPassword,
+    }, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      alert('密码已成功更改。');
+    })
+    .catch(error => {
+      console.error('更改密码时发生错误:', error.response);
+      alert(error.response.data.error.message || '更改密码时发生错误，请稍后再试。');
+    });
+  };
 
   if (!profile) {
     return <div>Loading...</div>;
@@ -55,6 +68,24 @@ export const Profile = () => {
           )}
           <h1 className="text-2xl font-semibold">{profile.username}</h1>
           <p className="text-gray-600">{profile.email}</p>
+          <input 
+            type="password" 
+            placeholder="Current Password" 
+            value={currentPassword}
+            onChange={e => setCurrentPassword(e.target.value)}
+          />
+          <input 
+            type="password" 
+            placeholder="New Password" 
+            value={newPassword}
+            onChange={e => setNewPassword(e.target.value)}
+          />
+          <input 
+            type="password" 
+            placeholder="Confirm Password" 
+            value={confirmPassword}
+            onChange={e => setConfirmPassword(e.target.value)}
+          />
           <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={resetPassword}>
             Reset Password
           </button>
