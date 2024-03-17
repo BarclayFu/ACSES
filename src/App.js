@@ -4,7 +4,7 @@ import { ProductByCategory } from "./components/user/ProductByCategory";
 import { useUserLoggedInQuery } from "./features/auth/userAuthApi";
 import { useAdminAuthChecked } from "./hooks/useAdminAuthChecked";
 import { useUserAuthChecked } from "./hooks/userUserAuthChecked";
-import { AdminLayout } from "./layouts/AdminLayout";
+// import { AdminLayout } from "./layouts/AdminLayout";
 import { UserLayout } from "./layouts/UserLayout";
 import { AddBrand } from "./pages/Admin/Brand/AddBrand";
 import { AllBrands } from "./pages/Admin/Brand/AllBrands";
@@ -23,7 +23,6 @@ import { ProductDetails } from "./pages/User/ProductDetails/ProductDetails";
 import { MyOrder } from "./pages/User/Profile/MyOrder/MyOrder";
 import { Search } from "./pages/User/Search/Search";
 import { UserLogin } from "./pages/User/UserLogin";
-import { UserRegister } from "./pages/User/UserRegister";
 import { PrivateRoute } from "./routes/admin/PrivateRoute";
 import { PublicRoute } from "./routes/admin/PublicRoute";
 import { UserPrivateRoute } from "./routes/user/UserPrivateRoute";
@@ -59,12 +58,11 @@ function App() {
 
       {/* user routes */}
       <Route path="/" element={<UserLayout />}>
-        {/* login and register routes */}
+        {/* login and routes */}
         <Route
           path="/register"
           element={
             <UserPublicRoute>
-              <UserRegister />
             </UserPublicRoute>
           }
         />
@@ -117,7 +115,7 @@ function App() {
       </Route>
 
       {/* admin routes */}
-      <Route path="/admin" element={<AdminLayout />}>
+      {/* <Route path="/admin" element={<AdminLayout />}>
         <Route
           path="/admin/dashboard"
           element={
@@ -182,7 +180,7 @@ function App() {
             </PrivateRoute>
           }
         />
-      </Route>
+      </Route> */}
       <Route path="/*" element={<NotFound />} />
       <Route path="/admin/*" element={<NotFound />} />
     </Routes>
