@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -17,6 +18,20 @@ export const Profile = () => {
     })
     .catch(error => console.error('Error fetching profile:', error));
   }, []);
+
+  const resetPassword = () => {
+    axios
+      .post('http://localhost:1337/api/auth/forgot-password', {
+        email: profile.email, // 使用用户的电子邮件地址
+      })
+      .then(response => {
+        alert('重置密码的邮件已发送到您的邮箱。');
+      })
+      .catch(error => {
+        console.error('重置密码时发生错误:', error.response);
+        alert('重置密码时发生错误，请稍后再试。');
+      });
+  }
 
   if (!profile) {
     return <div>Loading...</div>;
@@ -40,6 +55,9 @@ export const Profile = () => {
           )}
           <h1 className="text-2xl font-semibold">{profile.username}</h1>
           <p className="text-gray-600">{profile.email}</p>
+          <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={resetPassword}>
+            Reset Password
+          </button>
         </div>
         {/* 可以添加更多的个人信息展示 */}
       </div>
