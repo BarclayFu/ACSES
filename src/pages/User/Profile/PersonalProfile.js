@@ -38,11 +38,11 @@ export const Profile = () => {
       }
     })
     .then(response => {
-      alert('密码已成功更改。');
+      alert('Successfully changed password.');
     })
     .catch(error => {
-      console.error('更改密码时发生错误:', error.response);
-      alert(error.response.data.error.message || '更改密码时发生错误，请稍后再试。');
+      console.error('Error', error.response);
+      alert(error.response.data.error.message || 'Error, please try again.');
     });
   };
 
