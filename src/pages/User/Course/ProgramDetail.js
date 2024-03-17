@@ -89,7 +89,7 @@ export const ProgramDetail = () => {
         <Session programId={programId} />
       </div> */}
       <div className="mt-6 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Course Details</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Session Details</h2>
         <div className="bg-white shadow overflow-hidden sm:rounded-md">
           <ul className="divide-y divide-gray-200">
             <Session programId={programId} />

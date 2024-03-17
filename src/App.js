@@ -32,6 +32,7 @@ import { Program } from "./pages/User/Course/Program";
 import { ProgramDetail } from "./pages/User/Course/ProgramDetail";
 import { SessionDetail } from "./pages/User/Course/SessionDetail";
 import { ContentDetail } from "./pages/User/Course/ContentDetail";
+import { Profile } from "./pages/User/Profile/PersonalProfile";
 
 function App() {
   const adminAuthChecked = useAdminAuthChecked();
@@ -77,9 +78,10 @@ function App() {
             </UserPublicRoute>
           }
         />
-        
+        //Personal Profile Route
+        <Route path="/profile" element={<Profile />} />
 
-
+        // Programs Routes 
         <Route path="/programs/:programId" element={<ProgramDetail />} />
         <Route path="/programs/:programId/sessions/:sessionId/" element={<SessionDetail />} />
         <Route path="/content/:contentId" element={<ContentDetail />} />
