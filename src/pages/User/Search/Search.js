@@ -2,7 +2,7 @@ import React from "react";
 import { useSearchParams } from "react-router-dom";
 import { ProductCardSkeleton } from "../../../components/ui/ProductCardSkeleton";
 import { ContainerHeader } from "../../../components/user/ContainerHeader";
-import { ProductCard } from "../../../components/user/ProductCard";
+// import { ProductCard } from "../../../components/user/ProductCard";
 import { useSearchProductQuery } from "../../../features/product/productApi";
 import { setTitle } from "../../../utils/setTitle";
 
@@ -37,10 +37,10 @@ export const Search = () => {
       <p className="text-center uppercase font-medium">No Course found!</p>
     );
 
-  if (!isError && !isLoading && products?.length > 0)
-    content = products.map((proudct) => (
-      <ProductCard key={proudct._id} product={proudct} />
-    ));
+  // if (!isError && !isLoading && products?.length > 0)
+  //   content = products.map((proudct) => (
+  //     <ProductCard key={proudct._id} product={proudct} />
+  //   ));
 
   //set page title
   setTitle(`${searchKey} - Search `);

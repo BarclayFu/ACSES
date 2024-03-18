@@ -14,12 +14,9 @@ import { Dashboard } from "./pages/Admin/Dashboard";
 import { Login } from "./pages/Admin/Login";
 import { NotFound } from "./pages/Admin/NotFound";
 import { AllOrder } from "./pages/Admin/Order/AllOrder";
-import { AddProduct } from "./pages/Admin/Product/AddProduct";
-import { AllProducts } from "./pages/Admin/Product/AllProducts";
 import { CheckOut } from "./pages/User/CheckOut/CheckOut";
 import { Home } from "./pages/User/Home/Home";
 import { Order } from "./pages/User/Order/Order";
-import { ProductDetails } from "./pages/User/ProductDetails/ProductDetails";
 import { MyOrder } from "./pages/User/Profile/MyOrder/MyOrder";
 import { Search } from "./pages/User/Search/Search";
 import { UserLogin } from "./pages/User/UserLogin";
@@ -86,14 +83,6 @@ function App() {
 
         <Route path="/" element={ userAuthChecked ? <Home /> : <Navigate to="/login" />}  />
         <Route path="/home" element={  <Home />  }  />
-        <Route
-          path="/product-details/:slug/:productId"
-          element={<ProductDetails />}
-        />
-        <Route
-          path="/:categoryName/:categoryId"
-          element={<ProductByCategory />}
-        />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/search" element={<Search />} />
 
