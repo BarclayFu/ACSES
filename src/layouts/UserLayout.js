@@ -8,7 +8,7 @@ export const UserLayout = () => {
   return (
     <>
       <Headers />
-      <Cart />
+      {/* <Cart /> */}
       <Outlet />
       <Footer />
     </>

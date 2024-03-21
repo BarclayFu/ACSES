@@ -14,7 +14,6 @@ import { Dashboard } from "./pages/Admin/Dashboard";
 import { Login } from "./pages/Admin/Login";
 import { NotFound } from "./pages/Admin/NotFound";
 import { AllOrder } from "./pages/Admin/Order/AllOrder";
-import { CheckOut } from "./pages/User/CheckOut/CheckOut";
 import { Home } from "./pages/User/Home/Home";
 import { Order } from "./pages/User/Order/Order";
 import { MyOrder } from "./pages/User/Profile/MyOrder/MyOrder";
@@ -83,7 +82,6 @@ function App() {
 
         <Route path="/" element={ userAuthChecked ? <Home /> : <Navigate to="/login" />}  />
         <Route path="/home" element={  <Home />  }  />
-        <Route path="/checkout" element={<CheckOut />} />
         <Route path="/search" element={<Search />} />
 
         {/* user private routes */}

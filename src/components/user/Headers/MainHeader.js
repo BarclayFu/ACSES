@@ -13,6 +13,7 @@ import { Menu } from "./Menu";
 import { MobileMenu } from "./MobileMenu";
 import { Profile } from "../../../pages/User/Profile/PersonalProfile";
 import { useUserLoginMutation } from "../../../features/auth/userAuthApi";
+import { HiAcademicCap } from "react-icons/hi2";
 export const MainHeader = () => {
   const cartItems = useSelector(selectCartItems);
   const userAccessToken = localStorage.getItem("jwt");
@@ -40,7 +41,7 @@ export const MainHeader = () => {
 
 
   return (
-    <div className="w-full h-20 bg-[#039BD9] text-gray-100  px-2 sm:px-0 sticky top-0 z-40 shadow-md shadow-gray-400 ">
+    <div className="w-full h-20 bg-[#F0F3FB] text-gray-100  px-2 sm:px-0 sticky top-0 z-40 ">
       <div className="container mx-auto flex w-full h-full items-center justify-between space-x-3 relative">
         <div className="flex items-center space-x-3">
           {/* mobile left side menu */}
@@ -48,7 +49,6 @@ export const MainHeader = () => {
             className="sm:hidden block"
             onClick={() => setMobileMenu(!mobileMenu)}
           >
-            <FaAlignRight />
           </div>
           {/* mobile menu */}
           {mobileMenu && (
@@ -57,27 +57,14 @@ export const MainHeader = () => {
           {/* logo area */}
           <div className="xl:min-w-[300px]">
             <Link to="/">
-              <h1 className="text-2xl text-white font-semibold"> STEM Coding Lab</h1>
+              <div className="text-2xl text-black font-sans-serif">
+                <span><HiAcademicCap/></span>
+                <span> STEM Coding Lab</span>
+              </div>
             </Link>
           </div>
         </div>
-        {/* search bar */}
-        <form className="hidden sm:block sm:w-full" onSubmit={searchHeandler}>
-          <div className="flex items-center  bg-gray-200 rounded-md ring-1 ring-emerald-800">
-            <input
-              type="search"
-              name="search"
-              value={searchValue}
-              placeholder="Search Course..."
-              className="bg-transparent text-black px-2 py-2 focus:outline-none sm:w-full"
-              onChange={(e) => setSearchValue(e.target.value)}
-            />
-            <button type="submit" className="pr-3 text-lg text-[#f85606]">
-              <BsSearch />
-            </button>
-          </div>
-        </form>
-
+        
         {/* right side */}
         <div className="flex items-center space-x-3 relative">
           {userAccessToken ? (
@@ -86,33 +73,13 @@ export const MainHeader = () => {
                  <Link
                     to="/profile"
                     className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100">
-                    {/* <div className="w-7 h-7 ">
-                      <img
-                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                        alt="profile"
-                        className="w-full h-full rounded-full"
-                      />
-                    </div> */}
-                    <span className="text-2xl text-white pr-1">
+                    <span className="text-2xl text-black pr-1">
                       <AiOutlineUser />
                     </span>
-                    <span className="text-base font-medium">Profile</span>
-                    {/* <div className="whitespace-nowrap leading-4"> */}
-                      {/* <p className="text-[12px]">
-                        Hello, 
-                      </p> */}
-                      {/* <p className="text-[13px] font-semibold capitalize select-none">
-                        Profile
-                      </p> */}
-                      
-                    {/* </div> */}
+                    <span className="text-base text-black font-medium">Profile</span>
                 </Link>
-                {/* user account menu */}
-                {/* <div className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100">
-                  <ProfileButton className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"/>
-                </div> */}
                 <span className="text-base mx-2">|</span>
-                <div className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100">
+                <div className="flex hover:bg-orange-700/50 p-2 text-black rounded-md ease-out duration-100">
                   <LogoutButton className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"/>
                 </div>
               </div>
@@ -123,20 +90,16 @@ export const MainHeader = () => {
                 to="/login"
                 className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
               >
-                <span className="text-2xl text-white pr-1">
+                <span className="text-2xl text-black pr-1">
                   <AiOutlineUser />
                 </span>
                 <span className="text-base font-medium">Login</span>
               </Link>
-              {/* <span className="px-1"> |</span> */}
               <Link
                 to="/login"
                 className=" hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
               >
                 <LogoutButton className="text-base font-medium whitespace-nowrap"/>
-                {/* <span className="text-base font-medium whitespace-nowrap">
-                  log out 
-                </span> */}
                 
               </Link>
             </div>
@@ -152,18 +115,6 @@ export const MainHeader = () => {
             <BsSearch />
           </button>
 
-          {/* cart */}
-          {/* <div
-            className="flex items-center justify-center cursor-pointer"
-            onClick={cartOpenHandler}
-          >
-            <span className="text-4xl text-white sm:pb-1 absolute">
-              <AiOutlineShopping />
-            </span>
-            <p className="relative left-1 bottom-4 w-5 h-5 flex items-center justify-center bg-gray-800 text-white rounded-full">
-              <span>{cartItems.length > 0 ? cartItems.length : "0"}</span>
-            </p>
-          </div> */}
         </div>
       </div>
       {/* this form for mobile devices */}
