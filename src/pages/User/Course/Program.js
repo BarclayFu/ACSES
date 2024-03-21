@@ -75,7 +75,7 @@ export const Program = () => {
 
   return (
     
-    <div className="container mx-auto p-5">
+    <div className="container mx-auto p-5 ">
              {/* Grade和FocusArea下拉框 */}
         <div className="mb-4">
           <select value={selectedGrade} onChange={handleGradeChange} className="p-2 border border-gray-300 rounded mr-2">

@@ -47,38 +47,6 @@ export const Footer = () => {
             </div>
             <div className="">
             <div className="space-y-2 mt-2">
-            <p className="font-medium text-base"> Popular Courses </p>
-              <div className="flex flex-col mt-4 font-normal">
-                <Link
-                  to="/"
-                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  Robotics/Advanced Manufacturing
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  Artificial Intelligence
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  Cybersecurity
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear">
-                  Game Design & Animation
-                </Link>
-                <Link
-                  to="/"
-                  className="hover:text-blue-900 hover:ml-1 duration-100 ease-linear"
-                >
-                  Healthcare/BioTech
-                </Link>
-              </div>
             </div>
             </div>
             <div className="">

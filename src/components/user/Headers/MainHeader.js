@@ -41,7 +41,7 @@ export const MainHeader = () => {
 
 
   return (
-    <div className="w-full h-20 bg-[#F0F3FB] text-gray-100  px-2 sm:px-0 sticky top-0 z-40 ">
+    <div className="w-full h-20 text-gray-100  px-2 sm:px-0 ">
       <div className="container mx-auto flex w-full h-full items-center justify-between space-x-3 relative">
         <div className="flex items-center space-x-3">
           {/* mobile left side menu */}
@@ -57,7 +57,7 @@ export const MainHeader = () => {
           {/* logo area */}
           <div className="xl:min-w-[300px]">
             <Link to="/">
-              <div className="text-2xl text-black font-sans-serif">
+              <div className="flex text-2xl text-black font-sans-serif">
                 <span><HiAcademicCap/></span>
                 <span> STEM Coding Lab</span>
               </div>

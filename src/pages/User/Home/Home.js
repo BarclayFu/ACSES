@@ -11,9 +11,8 @@ export const Home = () => {
   //set page title
   setTitle("ACSES");
   return (
-    <>
-      <Landing/>  
+    <div className="bg-white">
       <Program/>
-    </>
+    </div>
   );
 };
