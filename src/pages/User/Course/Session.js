@@ -36,29 +36,40 @@ export const Session = ({ programId }) => {
     //   ))}
     // </div>
     <div>
-  {sessions.map(session => (
-    <div
-      key={session.id}
-      className="mb-6 p-4 border border-gray-300 rounded-lg transition duration-300 ease-in-out hover:shadow-lg hover:border-transparent"
-      onClick={() => handleSessionClick(session.id)}
-    >
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">{session.attributes.Title}</h2>
-      <div className="flex items-center text-gray-600 mb-1">
-        <i className="fas fa-clock mr-2"></i>
-        <span>Duration: {session.attributes.Duration}</span>
-      </div>
-      <div className="flex flex-wrap items-center">
-        {session.attributes.Tags.split(',').map(tag => (
-          <span key={tag} className="mr-2 mb-2 bg-blue-100 text-blue-800 text-sm font-semibold px-2.5 py-0.5 rounded">
-            {tag.trim()}
-          </span>
-        ))}
-      </div>
-      {/* 如果您决定显示观众信息，请取消此行的注释 */}
-      {/* <p className="text-gray-600">观众: {session.attributes.Audience}</p> */}
-    </div>
-  ))}
-</div>
+      {sessions.map(session => (
+        <div
+          key={session.id}
+          className="mb-6 p-4 border border-gray-300 rounded-lg transition duration-300 ease-in-out hover:shadow-lg hover:border-transparent"
+          onClick={() => handleSessionClick(session.id)}
+        >
+          {/* <h2 className="text-xl font-semibold text-gray-800 mb-2">{session.attributes.Title}</h2>
+          <div className="flex items-center text-gray-600 mb-1">
+            <i className="fas fa-clock mr-2"></i>
+            <span>Duration: {session.attributes.Duration}</span>
+          </div>
+          <div className="flex flex-wrap items-center">
+            {session.attributes.Tags.split(',').map(tag => (
+              <span key={tag} className="mr-2 mb-2 bg-blue-100 text-blue-800 text-sm font-semibold px-2.5 py-0.5 rounded">
+                {tag.trim()}
+              </span>
+            ))}
+          </div> */}
+          <li key={session.id} className="px-6 py-4 flex justify-between hover:bg-gray-50">
+            <div className="text-sm font-medium text-gray-900">{session.attributes.Title}</div>
+            <div className="text-sm font-medium text-gray-500">{session.attributes.Duration}</div>
+            <div className="text-sm font-medium text-gray-500">
+              {session.attributes.Tags.split(',').map(tag => (
+                <span key={tag} className="mr-2 mb-2 bg-blue-100 text-blue-800 text-sm font-semibold px-2.5 py-0.5 rounded">
+                  {tag.trim()}
+                </span>
+              ))}
+            </div>
+        </li>
+          {/* 如果您决定显示观众信息，请取消此行的注释 */}
+          {/* <p className="text-gray-600">观众: {session.attributes.Audience}</p> */}
+        </div>
+      ))}
+  </div>
 
   );
 };
