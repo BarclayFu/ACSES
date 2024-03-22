@@ -1,43 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
-import { FaAlignRight } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  selectUserInfo,
-} from "../../../features/auth/userAuthSelectors";
-import { openCart } from "../../../features/cart/cartOpenSlice";
-import { selectCartItems } from "../../../features/cart/cartSelectors";
-import { Menu } from "./Menu";
 import { MobileMenu } from "./MobileMenu";
-import { Profile } from "../../../pages/User/Profile/PersonalProfile";
-import { useUserLoginMutation } from "../../../features/auth/userAuthApi";
 import { HiAcademicCap } from "react-icons/hi2";
 export const MainHeader = () => {
-  const cartItems = useSelector(selectCartItems);
   const userAccessToken = localStorage.getItem("jwt");
-  const userInfo = useSelector(selectUserInfo);
   const [searchValue, setSearchValue] = useState("");
   const [mobileMenu, setMobileMenu] = useState(false);
   const [mobileSerach, setMobileSearch] = useState(false);
+  const [profile, setProfile] = useState();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  useEffect(() => {
+    
+    fetch('http://localhost:1337/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
+      headers: {
+        'Authorization': `Bearer ${userAccessToken}`
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      setProfile(data);
+    })
+    .catch(error => console.error('Error fetching profile:', error));
+  }, []);
 
-  //cart open handler
-  const cartOpenHandler = () => {
-    dispatch(openCart(true));
-  };
-
-  //search product handler
-  const searchHeandler = (e) => {
-    e.preventDefault();
-    if (searchValue !== "") {
-      setMobileSearch(false);
-      navigate(`/search?search=${searchValue}`);
-    }
-  };
+  const avatarUrl = profile && profile.Avatar ? `http://localhost:1337${profile.Avatar.url}` : '默认头像地址';
 
 
   return (
@@ -73,11 +64,17 @@ export const MainHeader = () => {
                  <Link
                     to="/profile"
                     className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100">
-                    <span className="text-2xl text-black pr-1">
-                      <AiOutlineUser />
+                    <span>
+                      <img
+                        src={avatarUrl}
+                        alt="Profile"
+                        className="rounded-full"
+                        style={{ width: '50px', height: '50px' }}
+                      />
                     </span>
-                    <span className="text-base text-black font-medium">Profile</span>
+                    
                 </Link>
+                
                 <span className="text-base mx-2">|</span>
                 <div className="flex hover:bg-orange-700/50 p-2 text-black rounded-md ease-out duration-100">
                   <LogoutButton className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"/>
@@ -88,20 +85,14 @@ export const MainHeader = () => {
             <div className="hidden sm:flex items-center">
               <Link
                 to="/login"
-                className="flex hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
+                className="flex hover:bg-orange-700/50 p-2 text-black rounded-md ease-out duration-100"
               >
                 <span className="text-2xl text-black pr-1">
                   <AiOutlineUser />
                 </span>
                 <span className="text-base font-medium">Login</span>
               </Link>
-              <Link
-                to="/login"
-                className=" hover:bg-orange-700/50 p-2 rounded-md ease-out duration-100"
-              >
-                <LogoutButton className="text-base font-medium whitespace-nowrap"/>
-                
-              </Link>
+              
             </div>
             
           )}
@@ -118,7 +109,7 @@ export const MainHeader = () => {
         </div>
       </div>
       {/* this form for mobile devices */}
-      <div className={mobileSerach ? "block" : "hidden"}>
+      {/* <div className={mobileSerach ? "block" : "hidden"}>
         <form
           className="sm:hidden block w-full absolute top-3 left-0"
           onSubmit={searchHeandler}
@@ -138,7 +129,7 @@ export const MainHeader = () => {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -159,5 +150,5 @@ const LogoutButton = () => {
     navigate('/login');
   };
 
-  return <button onClick={handleLogout}>Logout</button>;
+  return <button className="text-base font-medium" onClick={handleLogout}>Logout</button>;
 };
