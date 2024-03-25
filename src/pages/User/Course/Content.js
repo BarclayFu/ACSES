@@ -48,23 +48,29 @@ export const Content = ({ sessionId }) => {
     //   ))}
     // </div>
     <div>
-      {contents.map(content => (
-        <div key={content.id} className="mb-6 p-4 border border-gray-300 rounded-lg hover:shadow-md" style={{backgroundColor:"#fff"}} onClick={() => handleContentClick(content.id)}>
-          <h1 className="text-xl font-semibold text-gray-800 ml-14 mb-4" style={{ textAlign: "center" }}>{content.attributes.Type} - {content.attributes.Title}</h1>
-          {content.attributes.Link.includes(".mp4") && (
-            <div className="flex justify-center">
-              <video style={{ width: '60%', height: 'auto' }} src={content.attributes.Link} controls></video>
-            </div>
-          )}
-          {content.attributes.Link.includes(".pdf") && (
-            <a href={content.attributes.Link} className="text-blue-600 hover:text-blue-800 ml-14" target="_blank" rel="noreferrer">
-              {content.attributes.Link.split("/").pop()}
-            </a>
-          )}
-          {/* <p className="text-gray-600">{content.attributes.Link}</p> */}
-          {/* Display other content attributes here */}
+      <div className="bg-[#ffffff]" >
+        <div className="p-4 my-4 rounded-lg">
+          <div className="mb-2">
+            <strong className="font-normal text-lg">Resources</strong>
+
+
+
+            <div className="grid grid-cols-3 gap-4"></div>
+              {contents.map(content => (
+                <div key={content.id} className="mb-6 p-4 border border-gray-300 rounded-lg hover:shadow-md flex flex-col" style={{width:300,height:200,marginTop:10,justifyContent:"center"}} onClick={() => handleContentClick(content.id)}>
+                  <h1 className="text-xl font-semibold text-gray-800 ml-2 mb-4" style={{ textAlign: "left" }}>{content.attributes.Type} - {content.attributes.Title}</h1>
+                  {content.attributes.Link.includes(".mp4") && (
+                    <div className="flex justify-center">
+                      {/* <video style={{ width: '60%', height: 'auto' }} src={content.attributes.Link} controls></video> */}
+                    </div>
+                  )}
+                  
+                </div>
+              ))}
+            
+          </div>
         </div>
-      ))}
+      </div>
     </div>
 
   );
