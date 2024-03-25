@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
+import { Page, Document } from '@react-pdf/renderer';
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 export const ContentDetail = () => {
   const [detail, setDetail] = useState(null);
@@ -26,44 +28,40 @@ export const ContentDetail = () => {
   }
 
   return (
-    // <div className="mb-6 p-4 border-2 border-blue-500 rounded-lg">
-    //   <h1>{detail.attributes.Title}</h1>
-    //   <h1>{detail.attributes.Link}</h1>
-
-    //   <video controls>
-    //     <source src={`http://localhost:1337${detail.attributes.Material.data[0].attributes.url}`} type="video/mp4" />
-    //   </video>
-    // </div>
     <div
       className="mb-6 p-4 border-2 border-blue-500 rounded-lg"
-      style={{ margin: "20px auto", maxWidth: 500}}
+      style={{ margin: "20px auto", maxWidth: 1080}}
     >
       <h1>{detail.attributes.Title}</h1>
 
-      {detail.attributes.Material && (
-        <video controls>
-          <source
+      {detail.attributes.Type === 'Video' && (
+         <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+         <video
+           controls
+           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+         >
+           <source
+             src={`http://localhost:1337${detail.attributes.Material.data[0].attributes.url}`}
+             type="video/mp4"
+           />
+         </video>
+       </div>
+      )}
+
+      {detail.attributes.Type === 'Document' && (
+        <div>
+          <iframe
             src={`http://localhost:1337${detail.attributes.Material.data[0].attributes.url}`}
-            type="video/mp4"
-          />
-        </video>
+            width="100%"
+            height="600px"
+            title="PDF Viewer"
+          ></iframe>
+          <a href={`http://localhost:1337${detail.attributes.Material.data[0].attributes.url}`} target="_blank">View PDF</a>
+        </div>
+        
       )}
 
-      {detail.attributes.Link.includes(".pdf") && (
-        // <div>{detail.attributes.Link.split("/").pop()}</div>
-        <iframe
-        src={detail.attributes.Link}
-        style={{ width: '100%', height: '500px' }}
-        frameBorder="0"
-      >
-        This browser does not support PDFs. Please download the PDF to view it: 
-        <a href={detail.attributes.Link}>Download PDF</a>.
-      </iframe>
-      )}
 
-      {detail.attributes.Link.includes(".mp4") && (
-        <video controls={'controls'} style={{ width: 300 }} src={detail.attributes.Link}></video>
-      )}
     </div>
   );
 };

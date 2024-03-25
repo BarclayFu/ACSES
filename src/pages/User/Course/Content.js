@@ -15,7 +15,6 @@ export const Content = ({ sessionId }) => {
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data); // 打印数据看看是否正确返回
       setContents(data.data);
     })
     .catch(error => console.error('Error fetching content:', error));
@@ -27,47 +26,49 @@ export const Content = ({ sessionId }) => {
   };
 
   return (
-    // <div>
-    //   {contents.map(content => (
-    //     <div key={content.id} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleContentClick(content.id)}>
-    //       <h1>{content.attributes.Title}</h1>
-    //       <p>{content.attributes.Link}</p>
-    //       {/* Display other content attributes here */}
-    //     </div>
-    //   ))}
-    // </div>
-    // <div>
-    //   {contents.map(content => (
-    //     <div key={content.id} style={{backgroundColor:"#fff"}} className="mb-6 p-4 border-2 border-gray-300 rounded-lg" onClick={() => handleContentClick(content.id)}>
-    //       <h1 style={{ marginLeft: '60px' }}>{content.attributes.Type} - {content.attributes.Title}</h1>
-    //       {content.attributes.Link.includes(".mp4") && <video style={{ width: '60%', height: 'auto', marginLeft: '60px' }} src={content.attributes.Link}></video>}
-    //       {content.attributes.Link.includes(".pdf") && <div>{content.attributes.Link.split("/").pop()}</div>}
-    //       {/* <p>{content.attributes.Link}</p > */}
-    //       {/* Display other content attributes here */}
-    //     </div>
-    //   ))}
-    // </div>
     <div>
       <div className="bg-[#ffffff]" >
         <div className="p-4 my-4 rounded-lg">
           <div className="mb-2">
             <strong className="font-normal text-lg">Resources</strong>
 
-
-
-            <div className="grid grid-cols-3 gap-4"></div>
-              {contents.map(content => (
-                <div key={content.id} className="mb-6 p-4 border border-gray-300 rounded-lg hover:shadow-md flex flex-col" style={{width:300,height:200,marginTop:10,justifyContent:"center"}} onClick={() => handleContentClick(content.id)}>
-                  <h1 className="text-xl font-semibold text-gray-800 ml-2 mb-4" style={{ textAlign: "left" }}>{content.attributes.Type} - {content.attributes.Title}</h1>
-                  {content.attributes.Link.includes(".mp4") && (
-                    <div className="flex justify-center">
-                      {/* <video style={{ width: '60%', height: 'auto' }} src={content.attributes.Link} controls></video> */}
-                    </div>
-                  )}
-                  
+            <div className="grid grid-cols-2 gap-4">
+            {contents.map(content => (
+              <div key={content.id} className="max-w-sm rounded overflow-hidden shadow-lg my-2">
+                <img 
+                   className="w-[500px] h-[200px] object-cover" 
+                  src={`http://localhost:1337${content.attributes.Cover.data.attributes.url}`} 
+                  alt={content.attributes.Title} 
+                />
+                <div className="px-6 py-4">
+                  <div className="font-bold text-xl mb-2">{content.attributes.Type} - {content.attributes.Title}</div>
+                  {/* 可以在这里添加一个简短的描述 */}
+                  <p className="text-gray-700 text-base">
+                    {content.attributes.Description}
+                  </p>
                 </div>
-              ))}
-            
+                <div className="px-6 pt-4 pb-2">
+                  {content.attributes.Type === 'Video' && (
+                    <button 
+                      className="inline-block bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"
+                      onClick={() => handleContentClick(content.id)}
+                    >
+                      <i className="far fa-eye"></i> Watch
+                    </button>
+                  )}
+                  {content.attributes.Type === 'Document' && (
+                    <button 
+                      className="inline-block bg-green-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"
+                      onClick={() => handleContentClick(content.id)}
+                    >
+                      <i className="fas fa-book"></i> Read
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
+
+            </div>
           </div>
         </div>
       </div>
@@ -75,4 +76,3 @@ export const Content = ({ sessionId }) => {
 
   );
 };
-

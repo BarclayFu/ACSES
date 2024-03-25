@@ -169,9 +169,9 @@ export const ProgramDetail = () => {
                   <ul className="divide-y divide-gray-200">
                     <li className="px-6 py-4">
                       <div className="flex justify-between">
-                        <div className="text-sm font-medium text-gray-500">Title</div>
-                        <div className="text-sm font-medium text-gray-500">Duration</div>
-                        <div className="text-sm font-medium text-gray-500">Tag</div>
+                        <div className="w-1/3 text-sm font-medium text-gray-500 text-left">Title</div>
+                        <div className="w-1/3 text-sm font-medium text-gray-500 text-center">Duration</div>
+                        <div className="w-1/3 text-sm font-medium text-gray-500 text-center">Tag</div>
                       </div>
                     </li>
                     <li>
