@@ -36,7 +36,7 @@ export const ContentDetail = () => {
     // </div>
     <div
       className="mb-6 p-4 border-2 border-blue-500 rounded-lg"
-      style={{ margin: "20px auto", maxWidth: 500, backgroundColor: "#fff" }}
+      style={{ margin: "20px auto", maxWidth: 500}}
     >
       <h1>{detail.attributes.Title}</h1>
 
