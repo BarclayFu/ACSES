@@ -41,7 +41,7 @@ export const ContentDetail = () => {
            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
          >
            <source
-             src={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${detail.attributes.Material.data[0].attributes.url}`}
+             src={`${detail.attributes.Material.data[0].attributes.url}`}
              type="video/mp4"
            />
          </video>
@@ -51,12 +51,12 @@ export const ContentDetail = () => {
       {detail.attributes.Type === 'Document' && (
         <div>
           <iframe
-            src={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${detail.attributes.Material.data[0].attributes.url}`}
+            src={`${detail.attributes.Material.data[0].attributes.url}`}
             width="100%"
             height="600px"
             title="PDF Viewer"
           ></iframe>
-          <a href={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${detail.attributes.Material.data[0].attributes.url}`} target="_blank">View PDF</a>
+          <a href={`${detail.attributes.Material.data[0].attributes.url}`} target="_blank">View PDF</a>
         </div>
         
       )}
