@@ -1,25 +1,16 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import { ProductByCategory } from "./components/user/ProductByCategory";
 import { useUserLoggedInQuery } from "./features/auth/userAuthApi";
 import { useAdminAuthChecked } from "./hooks/useAdminAuthChecked";
 import { useUserAuthChecked } from "./hooks/userUserAuthChecked";
 import { UserLayout } from "./layouts/UserLayout";
-import { AddBrand } from "./pages/Admin/Brand/AddBrand";
-import { AllBrands } from "./pages/Admin/Brand/AllBrands";
-import { AddCategory } from "./pages/Admin/Category/AddCategory";
-import { AllCategories } from "./pages/Admin/Category/AllCategories";
-import { Dashboard } from "./pages/Admin/Dashboard";
 import { Login } from "./pages/Admin/Login";
 import { NotFound } from "./pages/Admin/NotFound";
 import { Home } from "./pages/User/Home/Home";
-import { Search } from "./pages/User/Search/Search";
 import { UserLogin } from "./pages/User/UserLogin";
 import { PrivateRoute } from "./routes/admin/PrivateRoute";
 import { PublicRoute } from "./routes/admin/PublicRoute";
-import { UserPrivateRoute } from "./routes/user/UserPrivateRoute";
 import { UserPublicRoute } from "./routes/user/UserPublicRoute";
-import { Program } from "./pages/User/Course/Program";
 import { ProgramDetail } from "./pages/User/Course/ProgramDetail";
 import { SessionDetail } from "./pages/User/Course/SessionDetail";
 import { ContentDetail } from "./pages/User/Course/ContentDetail";
@@ -75,7 +66,6 @@ function App() {
 
         <Route path="/" element={ userAuthChecked ? <Home /> : <Navigate to="/login" />}  />
         <Route path="/home" element={  <Home />  }  />
-        <Route path="/search" element={<Search />} />
       </Route>
 
       <Route path="/*" element={<NotFound />} />
