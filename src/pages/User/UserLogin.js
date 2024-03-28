@@ -38,7 +38,7 @@ export const UserLogin = () => {
   
     try {
       // 发送 POST 请求到 Strapi 登录接口
-      const response = await axios.post('http://localhost:1337/api/auth/local', {
+      const response = await axios.post('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/auth/local', {
         identifier: email, // Strapi 需要 'identifier' 字段，可以是用户名或邮箱
         password: password,
       });

@@ -16,7 +16,7 @@ export const MainHeader = () => {
   const navigate = useNavigate();
   useEffect(() => {
     
-    fetch('http://localhost:1337/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
+    fetch('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
       headers: {
         'Authorization': `Bearer ${userAccessToken}`
       }
@@ -28,7 +28,7 @@ export const MainHeader = () => {
     .catch(error => console.error('Error fetching profile:', error));
   }, []);
 
-  const avatarUrl = profile && profile.Avatar ? `http://localhost:1337${profile.Avatar.url}` : '默认头像地址';
+  const avatarUrl = profile && profile.Avatar ? `https://pretty-prosperity-17e0b1a4eb.strapiapp.com${profile.Avatar.url}` : '默认头像地址';
 
 
   return (

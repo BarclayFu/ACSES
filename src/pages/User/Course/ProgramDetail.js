@@ -13,7 +13,7 @@ export const ProgramDetail = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch(`http://localhost:1337/api/programs/${programId}?populate=Cover,sessions`, {
+    fetch(`https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/programs/${programId}?populate=Cover,sessions`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

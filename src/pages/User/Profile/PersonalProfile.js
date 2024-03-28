@@ -11,7 +11,7 @@ export const Profile = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch('http://localhost:1337/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
+    fetch('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -33,7 +33,7 @@ export const Profile = () => {
       return;
     }
     const token = localStorage.getItem('jwt');
-    axios.post('http://localhost:1337/api/auth/change-password', {
+    axios.post('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/auth/change-password', {
       currentPassword: currentPassword,
       password: newPassword,
       passwordConfirmation: confirmPassword,
@@ -55,8 +55,8 @@ export const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  const avatarUrl = `http://localhost:1337${profile.Avatar.url}`;
-  const backgroundUrl = `http://localhost:1337${profile.Background.url}`;
+  const avatarUrl = `https://pretty-prosperity-17e0b1a4eb.strapiapp.com${profile.Avatar.url}`;
+  const backgroundUrl = `https://pretty-prosperity-17e0b1a4eb.strapiapp.com${profile.Background.url}`;
 
 
   return (
@@ -65,7 +65,7 @@ export const Profile = () => {
         <div className="flex flex-col items-center justify-center p-4" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
           {profile.Avatar && (
             <img
-              src={`http://localhost:1337${profile.Avatar.url}`}
+              src={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${profile.Avatar.url}`}
               alt="Profile"
               className="rounded-full"
               style={{ width: '100px', height: '100px' }}
