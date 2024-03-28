@@ -104,7 +104,7 @@ export const Program = () => {
               <div className="w-1/3">
                 <img
                   className="object-cover h-full w-full" // 图片覆盖整个容器区域
-                  src={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${program.attributes.Cover.data.attributes.url}`}
+                  src={`${program.attributes.Cover.data.attributes.url}`}
                   alt={program.attributes.Title}
                 />
               </div>
