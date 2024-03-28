@@ -37,7 +37,7 @@ export const Content = ({ sessionId }) => {
               <div key={content.id} className="max-w-sm rounded overflow-hidden shadow-lg my-2">
                 <img 
                    className="w-[500px] h-[200px] object-cover" 
-                  src={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${content.attributes.Cover.data.attributes.url}`} 
+                  src={`${content.attributes.Cover.data.attributes.url}`} 
                   alt={content.attributes.Title} 
                 />
                 <div className="px-6 py-4">
