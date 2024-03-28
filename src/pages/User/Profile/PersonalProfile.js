@@ -65,7 +65,7 @@ export const Profile = () => {
         <div className="flex flex-col items-center justify-center p-4" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
           {profile.Avatar && (
             <img
-              src={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${profile.Avatar.url}`}
+              src={`${profile.Avatar.url}`}
               alt="Profile"
               className="rounded-full"
               style={{ width: '100px', height: '100px' }}
