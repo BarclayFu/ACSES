@@ -55,8 +55,8 @@ export const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  const avatarUrl = `https://pretty-prosperity-17e0b1a4eb.strapiapp.com${profile.Avatar.url}`;
-  const backgroundUrl = `https://pretty-prosperity-17e0b1a4eb.strapiapp.com${profile.Background.url}`;
+  const avatarUrl = `${profile.Avatar.url}`;
+  const backgroundUrl = `${profile.Background.url}`;
 
 
   return (
