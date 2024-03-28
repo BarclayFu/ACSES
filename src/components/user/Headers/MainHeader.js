@@ -28,7 +28,7 @@ export const MainHeader = () => {
     .catch(error => console.error('Error fetching profile:', error));
   }, []);
 
-  const avatarUrl = profile && profile.Avatar ? `https://pretty-prosperity-17e0b1a4eb.strapiapp.com${profile.Avatar.url}` : '默认头像地址';
+  const avatarUrl = profile && profile.Avatar ? `${profile.Avatar.url}` : '默认头像地址';
 
 
   return (
