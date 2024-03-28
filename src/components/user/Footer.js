@@ -5,7 +5,7 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import image from "../../images/playstore.png";
+
 
 export const Footer = () => {
   return (
