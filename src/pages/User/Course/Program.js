@@ -10,7 +10,7 @@ export const Program = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch('http://localhost:1337/api/programs', {
+    fetch('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/programs', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -28,7 +28,7 @@ export const Program = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    let url = 'http://localhost:1337/api/programs?populate=Cover';
+    let url = 'https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/programs?populate=Cover';
 
     if (selectedGrade !== 'Audience') {
       url += `&filters[Audience][$eq]=${selectedGrade}`;
@@ -104,7 +104,7 @@ export const Program = () => {
               <div className="w-1/3">
                 <img
                   className="object-cover h-full w-full" // 图片覆盖整个容器区域
-                  src={`http://localhost:1337${program.attributes.Cover.data.attributes.url}`}
+                  src={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${program.attributes.Cover.data.attributes.url}`}
                   alt={program.attributes.Title}
                 />
               </div>

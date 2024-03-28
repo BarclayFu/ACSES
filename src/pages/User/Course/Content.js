@@ -8,7 +8,7 @@ export const Content = ({ sessionId }) => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch(`http://localhost:1337/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
+    fetch(`https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -37,7 +37,7 @@ export const Content = ({ sessionId }) => {
               <div key={content.id} className="max-w-sm rounded overflow-hidden shadow-lg my-2">
                 <img 
                    className="w-[500px] h-[200px] object-cover" 
-                  src={`http://localhost:1337${content.attributes.Cover.data.attributes.url}`} 
+                  src={`https://pretty-prosperity-17e0b1a4eb.strapiapp.com${content.attributes.Cover.data.attributes.url}`} 
                   alt={content.attributes.Title} 
                 />
                 <div className="px-6 py-4">
