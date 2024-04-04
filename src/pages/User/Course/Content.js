@@ -58,7 +58,7 @@ export const Content = ({ sessionId }) => {
                       <i className="far fa-eye"></i> Watch
                     </button>
                   )}
-                  {content.attributes.Type === 'Document' && (
+                  {content.attributes.Type === 'PDF' && (
                     <button 
                       className="inline-block bg-green-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"
                       onClick={() => handleContentClick(content.id)}
@@ -74,6 +74,16 @@ export const Content = ({ sessionId }) => {
                       style={{ width: '120px' }} 
                     >
                       <i className="fas fa-download"></i> Download
+                    </button>
+                  )}
+
+                  {content.attributes.Type === 'Word' && (
+                    <button 
+                      className="inline-block bg-purple-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"
+                      onClick={() => handleContentClick(content.id)}
+                      style={{ width: '120px' }} 
+                    >
+                      <i className="fas fa-file-word"></i> Open
                     </button>
                   )}
                 </div>

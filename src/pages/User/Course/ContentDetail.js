@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { Page, Document } from '@react-pdf/renderer';
 import { pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+function getWordViewerUrl(wordUrl) {
+  return `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(wordUrl)}`;
+}
 
 export const ContentDetail = () => {
   const [detail, setDetail] = useState(null);
@@ -48,7 +51,7 @@ export const ContentDetail = () => {
        </div>
       )}
 
-      {detail.attributes.Type === 'Document' && (
+      {detail.attributes.Type === 'PDF' && (
         <div>
           <iframe
             src={`${detail.attributes.Material.data[0].attributes.url}`}
@@ -70,9 +73,19 @@ export const ContentDetail = () => {
             <a href={`${detail.attributes.Material.data[0].attributes.url}`} target="_blank">Press Me to download PPT</a>
           </button>
         </div>
-
-        
       )}
+
+      {detail.attributes.Type === 'Word' && (
+        <div>
+          <iframe
+            src={getWordViewerUrl(detail.attributes.Material.data[0].attributes.url)}
+            width="100%"
+            height="600px"
+            title="Word Viewer"
+          ></iframe>
+        </div>
+      )}
+
 
 
     </div>
