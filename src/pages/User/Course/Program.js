@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Program = () => {
   const [programs, setPrograms] = useState([]);
@@ -61,9 +62,6 @@ export const Program = () => {
 
   const navigate = useNavigate();
 
-  const handleProgramClick = (programId) => {
-    navigate(`/programs/${programId}`);
-  };
 
   const handleGradeChange = (event) => {
     setSelectedGrade(event.target.value);
@@ -90,27 +88,26 @@ export const Program = () => {
           </select>
         </div>
       <h1 className="text-2xl font-semibold mb-6">Resources</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {programs.map(program => (
-          <div key={program.id}
-               className="flex bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out overflow-hidden" 
-               style={{ height: '100px' }} // 设置一个固定高度
-               onClick={() => handleProgramClick(program.id)}>
-            <div className="p-3 flex flex-col justify-between" style={{ width: '66.66%' }}>
-              <h2 className="font-medium text-sm">{program.attributes.Title}</h2>
-              <p className="text-xs">{program.attributes.Description}</p>
-            </div>
-            {program.attributes.Cover.data && (
-              <div className="w-1/3">
-                <img
-                  className="object-cover h-full w-full" // 图片覆盖整个容器区域
-                  src={`${program.attributes.Cover.data.attributes.url}`}
-                  alt={program.attributes.Title}
-                />
-              </div>
-            )}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 min-h-[185px]" >
+      {programs.map(program => (
+        <Link to={`/programs/${program.id}`} key={program.id}
+              className="flex bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out overflow-hidden" 
+              style={{ height: '100px' }}>
+          <div className="p-3 flex flex-col justify-between" style={{ width: '66.66%' }}>
+            <h2 className="font-medium text-sm">{program.attributes.Title}</h2>
+            <p className="text-xs">{program.attributes.Description}</p>
           </div>
-        ))}
+          {program.attributes.Cover.data && (
+            <div className="w-1/3">
+              <img
+                className="object-cover h-full w-full"
+                src={`${program.attributes.Cover.data.attributes.url}`}
+                alt={program.attributes.Title}
+              />
+            </div>
+          )}
+        </Link>
+      ))}
       </div>
     </div>
   );
