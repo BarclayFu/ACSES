@@ -46,7 +46,7 @@ export const ProgramDetail = () => {
   ];
   
   const parseOverview = (overview) => {
-    if (!overview || overview.length === 0) return null;
+    if (!overview) return <p>No overview available.</p>;
     return overview.map((block) => {
       if (block.type === 'paragraph') {
         return block.children.map((child) => child.text).join('');
@@ -56,7 +56,7 @@ export const ProgramDetail = () => {
   };
 
   const parseWhatIncluded = (whatIncluded) => {
-    if (!whatIncluded || whatIncluded.length === 0) return null;
+    if (!whatIncluded) return <p>No What's Included available.</p>;
     return whatIncluded.map(block => {
       // 对于段落类型
       if (block.type === 'paragraph') {
@@ -82,7 +82,7 @@ export const ProgramDetail = () => {
   
 
   const parseSkill = (skill) => {
-    if (!skill || skill.length === 0) return null;
+    if (!skill) return <p>No skill available.</p>;
     return skill.map((skill, index) => {
       // 对于标题类型
       if (skill.type === 'heading') {
@@ -165,7 +165,7 @@ export const ProgramDetail = () => {
                 <span>Overview</span>
               </button>
             </div>
-            {isOverviewExpanded && program.attributes.Overview && (
+            {isOverviewExpanded && (
               <p className="text-gray-600 text-center text-justify">
                 {parseOverview(program.attributes.Overview)}
               </p>
@@ -185,7 +185,7 @@ export const ProgramDetail = () => {
                 <span>What's Included</span>
               </button>
             </div>
-            {isWhatIncludedExpanded && program.attributes.WhatIncluded &&(
+            {isWhatIncludedExpanded && (
               <p className="text-gray-600 text-center text-justify">
                 {parseWhatIncluded(program.attributes.WhatIncluded)}
               </p>
@@ -227,12 +227,10 @@ export const ProgramDetail = () => {
       </div>
 
       <div className="bg-[#F0F3FB] w-1/3"  style={{margin:20,borderRadius:20}}>
-        {program.attributes.Skill && (
           <div className="p-6">
           <p style={{fontWeight:"bold",fontSize:20,marginBottom:20}}>Skills</p>
           {parseSkill(program.attributes.Skill)}
         </div>
-        )} 
       </div>
     </div>
 

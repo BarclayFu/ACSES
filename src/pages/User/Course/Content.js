@@ -33,7 +33,8 @@ export const Content = ({ sessionId }) => {
             <strong className="font-normal text-lg">Resources</strong>
 
             <div className="grid grid-cols-2 gap-4">
-            {contents.map(content => (
+            {contents && contents.length > 0 ? 
+            (contents.map(content => (
               <div key={content.id} className="max-w-sm rounded overflow-hidden shadow-lg my-2">
                 <img 
                    className="w-[500px] h-[200px] object-cover" 
@@ -66,7 +67,9 @@ export const Content = ({ sessionId }) => {
                   )}
                 </div>
               </div>
-            ))}
+            ))):(
+              <p>No resources available.</p>
+            )}
 
             </div>
           </div>
