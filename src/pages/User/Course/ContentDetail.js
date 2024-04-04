@@ -61,6 +61,13 @@ export const ContentDetail = () => {
         
       )}
 
+      {detail.attributes.Type === 'PowerPoint' && (
+        <button className="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+          <a href={`${detail.attributes.Material.data[0].attributes.url}`} target="_blank">Press Me to download PPT</a>
+        </button>
+        
+      )}
+
 
     </div>
   );
