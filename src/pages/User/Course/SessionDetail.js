@@ -31,11 +31,12 @@ export const SessionDetail = () => {
   const breadcrumbs = [
     { name: 'All Programs', link: '/' },
     { name: programTitle, link: `/programs/${programId}` }, // Program Title 应替换为实际程序标题
-    { name:sessionTitle, link: `/programs/${programId}/sessions/${sessionId}` }, // Session Title 应替换为实际会话标题
+    { name: sessionTitle, link: `/programs/${programId}/sessions/${sessionId}` }, // Session Title 应替换为实际会话标题
   ];
  
   // 递归地渲染列表项
   const renderListItems = (items) => {
+    if(!items) return null;
     return items.map((item, index) => {
       if (item.type === 'list-item') {
         return <li key={index} style={{ listStyleType: 'disc', marginLeft: '20px' }}>{renderListItems(item.children)}</li>;
@@ -46,6 +47,7 @@ export const SessionDetail = () => {
 
   // 渲染 objectives 中的每一项（可能是列表或段落）
   const renderObjectivesItem = (item) => {
+    if (!item) return null;
     if (item.type === 'list') {
       return item.format === 'unordered' ? <ul style={{ paddingLeft: 0 }}>{renderListItems(item.children)}</ul>
                                          : <ol>{renderListItems(item.children)}</ol>;
@@ -56,12 +58,15 @@ export const SessionDetail = () => {
 
   // 渲染 objectives
   const renderObjectives = (objectives) => {
+    if (!objectives) return <p>No objectives available.</p>;
+    if (!objectives) return <p>No objectives available.</p>; 
     return objectives.map((item, index) => renderObjectivesItem(item));
   };
 
 
   // 解析并渲染 overview
   const renderOverview = (overview) => {
+    if (!overview) return <p>No overview available.</p>; 
     return overview.map((paragraph, index) => {
       return <p key={index}>{paragraph.children.map(child => child.text)}</p>;
     });
@@ -69,6 +74,7 @@ export const SessionDetail = () => {
 
 
   const renderDiscussionTopics = (discussionTopics) => {
+    if (!discussionTopics) return <p>No discussion topics available.</p>;
     return discussionTopics.map((topic, index) => {
       // 对于标题类型
       if (topic.type === 'heading') {
@@ -102,6 +108,7 @@ export const SessionDetail = () => {
 
 
   const renderActivities = (activities) => {
+    if (!activities) return <p>No activities available.</p>;
     return activities.map((activity, index) => {
       // 对于段落类型
       if (activity.type === 'paragraph') {
@@ -121,6 +128,7 @@ export const SessionDetail = () => {
 
 
   const renderAlignment = (alignment) => {
+    if (!alignment) return <p>No alignment available.</p>;
     return alignment.map((item, index) => {
       // 对于段落类型
       if (item.type === 'paragraph') {
