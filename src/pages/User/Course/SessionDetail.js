@@ -164,7 +164,7 @@ export const SessionDetail = () => {
   }
 
   return (
-  <div>
+  <div className="container mx-auto">
     <nav aria-label="breadcrumb" className="w-full">
         <ol className="flex leading-none text-indigo-600">
           {breadcrumbs.map((crumb, index) => (
