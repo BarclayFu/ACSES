@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Session = ({ programId }) => {
   const [sessions, setSessions] = useState([]);
@@ -39,7 +40,18 @@ export const Session = ({ programId }) => {
               className="mb-2 p-4 transition duration-300 ease-in-out hover:shadow-lg hover:border-transparent border-b border-gray-200"
             >
               <li className="px-6 py-0 flex justify-between items-center">
-                <div className="w-1/3 text-sm font-medium text-blue-500" onClick={() => handleSessionClick(session.id, session.attributes.program.data.attributes.Title, session.attributes.Title)}>{session.attributes.Title}</div>
+              <div className="w-1/3 text-sm font-medium text-blue-500">
+                <Link 
+                  to={`/programs/${programId}/sessions/${session.id}`}
+                  state={{
+                    programId: programId,
+                    programTitle: session.attributes.program.data.attributes.Title,
+                    sessionTitle: session.attributes.Title
+                  }}
+                >
+                  {session.attributes.Title}
+                </Link>
+              </div>
                 <div className="w-1/3 text-sm font-medium text-gray-500 text-center">{session.attributes.Duration}</div>
                 <div className="w-1/3 text-sm font-medium text-gray-500 text-center">
                   {session.attributes.Tags ? (
