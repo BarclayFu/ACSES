@@ -132,7 +132,7 @@ export const ProgramDetail = () => {
         {breadcrumbs.map((crumb, index) => (
           <React.Fragment key={index}>
             {index !== 0 && <GoChevronRight />} {/* 在列表项前添加箭头 */}
-            <li className={`flex items-center ${index === 0 ? 'font-medium' : 'text-indigo-600 hover:text-indigo-700 hover:underline'}`}>
+            <li className={`flex items-center ${index === 0 ? 'text-indigo-600 hover:text-indigo-700 hover:underline': 'font-medium' }`}>
               {index === breadcrumbs.length - 1 ? (
                 <span className="text-gray-500">{crumb.name}</span>
               ) : (

@@ -169,7 +169,7 @@ export const SessionDetail = () => {
         <ol className="flex leading-none text-indigo-600">
           {breadcrumbs.map((crumb, index) => (
             <React.Fragment key={index}>
-              <li className={`${index === 0 ? 'font-medium' : 'text-indigo-600 hover:text-indigo-700 hover:underline'} flex items-center`}>
+              <li className={`${index === breadcrumbs.length - 1 ? 'font-medium' :'text-indigo-600 hover:text-indigo-700 hover:underline'} flex items-center`}>
                 {index !== 0 && <GoChevronRight className="mx-2" />}
                 {index === breadcrumbs.length - 1 ? (
                   <span className="text-gray-500">{crumb.name}</span>
