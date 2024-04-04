@@ -202,7 +202,7 @@ export const ProgramDetail = () => {
                 onClick={toggleExpand}
               >
                 {isExpanded ? <GoChevronDown /> : <GoChevronRight />}
-                <span className="text-xl text-gray-600 block mb-2 leading-loose">Resources</span> 
+                <span className="text-xl text-gray-600 block mb-2 leading-loose">Sessions</span> 
               </button>
             </div>
 
