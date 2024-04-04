@@ -9,6 +9,7 @@ export const SessionDetail = () => {
   const { sessionId } = useParams();
   const [isOverviewExpanded, setIsOverviewExpanded] = useState(true);
   const [isDiscussionTopicsExpanded, setIsDiscussionTopicsExpanded] = useState(true);
+  const [isActivitiesExpanded, setIsActivitiesExpanded] = useState(true);
   const [isObjecitveExpanded, setIsObjectiveExpanded] = useState(true);
   const [isAlignmentExpanded, setIsAlignmentExpanded] = useState(true);
   const location = useLocation();
@@ -158,6 +159,10 @@ export const SessionDetail = () => {
     setIsDiscussionTopicsExpanded(!isDiscussionTopicsExpanded);
   };
 
+  const toggleActivitiesTopics = () => {
+    setIsActivitiesExpanded(!isActivitiesExpanded);
+  };
+
   const toggleObjective = () => {
     setIsObjectiveExpanded(!isObjecitveExpanded);
   };
@@ -237,13 +242,13 @@ export const SessionDetail = () => {
           <div>
             <div className="mb-2">
               <button 
-                onClick={toggleDiscussionTopics}
+                onClick={toggleActivitiesTopics}
                 className="text-lg flex items-center justify-start w-full"
               >
-                {isDiscussionTopicsExpanded ? <GoChevronDown className="mr-2" />  : <GoChevronRight className="mr-2" />} {/* 添加一个展开/折叠的指示器 */}
+                {isActivitiesExpanded ? <GoChevronDown className="mr-2" />  : <GoChevronRight className="mr-2" />} {/* 添加一个展开/折叠的指示器 */}
                 <span>Activities</span>
               </button>
-              {isDiscussionTopicsExpanded && ( 
+              {isActivitiesExpanded && ( 
                 <div className="mt-2 ml-4 text-gray-700">
                   {renderActivities(session.attributes.Activities)}
                 </div>
