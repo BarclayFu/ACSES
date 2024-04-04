@@ -20,9 +20,15 @@ export const Session = ({ programId }) => {
   }, [programId]);
 
   // 这里可以添加更多的解析函数，例如解析objectives等
-  const handleSessionClick = (sessionId) => {
-    navigate(`/programs/${programId}/sessions/${sessionId}`);
-  };
+  const handleSessionClick = (sessionId, programTitle, sessionTitle) => {
+    navigate(`/programs/${programId}/sessions/${sessionId}`,{ 
+      state: { 
+        programId: programId, 
+        programTitle: programTitle,
+        sessionTitle: sessionTitle,
+        }
+      });
+    };
 
   return (
   <div >
@@ -33,7 +39,7 @@ export const Session = ({ programId }) => {
         // onClick={() => handleSessionClick(session.id)}
       >
         <li className="px-6 py-0 flex justify-between items-center">
-          <div className="w-1/3 text-sm font-medium text-blue-500" onClick={() => handleSessionClick(session.id)}>{session.attributes.Title}</div>
+          <div className="w-1/3 text-sm font-medium text-blue-500" onClick={() => handleSessionClick(session.id, session.attributes.program.data.attributes.Title,session.attributes.Title)}>{session.attributes.Title}</div>
           <div className="w-1/3 text-sm font-medium text-gray-500 text-center">{session.attributes.Duration}</div>
           <div className="w-1/3 text-sm font-medium text-gray-500 text-center">
             {session.attributes.Tags.split(',').map(tag => (

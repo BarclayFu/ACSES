@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation,Link } from 'react-router-dom';
 import { Content } from './Content';
 import { GoChevronRight } from "react-icons/go";
 import { GoChevronDown } from "react-icons/go";
@@ -11,6 +11,8 @@ export const SessionDetail = () => {
   const [isDiscussionTopicsExpanded, setIsDiscussionTopicsExpanded] = useState(true);
   const [isObjecitveExpanded, setIsObjectiveExpanded] = useState(true);
   const [isAlignmentExpanded, setIsAlignmentExpanded] = useState(true);
+  const location = useLocation();
+  const { programId, programTitle, sessionTitle } = location.state;
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
@@ -25,6 +27,12 @@ export const SessionDetail = () => {
     })
     .catch(error => console.error('Error fetching session details:', error));
   }, [sessionId]);
+
+  const breadcrumbs = [
+    { name: 'All Programs', link: '/' },
+    { name: programTitle, link: `/programs/${programId}` }, // Program Title 应替换为实际程序标题
+    { name:sessionTitle, link: `/programs/${programId}/sessions/${sessionId}` }, // Session Title 应替换为实际会话标题
+  ];
  
   // 递归地渲染列表项
   const renderListItems = (items) => {
@@ -156,17 +164,30 @@ export const SessionDetail = () => {
   }
 
   return (
+  <div>
+    <nav aria-label="breadcrumb" className="w-full">
+        <ol className="flex leading-none text-indigo-600">
+          {breadcrumbs.map((crumb, index) => (
+            <React.Fragment key={index}>
+              <li className={`${index === 0 ? 'font-medium' : 'text-indigo-600 hover:text-indigo-700 hover:underline'} flex items-center`}>
+                {index !== 0 && <GoChevronRight className="mx-2" />}
+                {index === breadcrumbs.length - 1 ? (
+                  <span className="text-gray-500">{crumb.name}</span>
+                ) : (
+                  <Link to={crumb.link}>{crumb.name}</Link>
+                )}
+              </li>
+            </React.Fragment>
+          ))}
+        </ol>
+      </nav>
+
+ 
     <div className="w-full bg-[#ffffff] flex container" style={{margin:"auto",borderRadius:20,overflow:"hidden",marginTop:20,marginBottom:20}}>
       
       {/* 这里可以展示更多的content详情 */}
       <div className="bg-[#ffffff] w-2/3" >
         <div style={{ borderRadius:10,padding:20,marginBottom:20 }}>
-          {/* <div style={{ fontWeight: "bold", textAlign: "center", fontSize: "1.5rem", marginBottom: "10px" }}>{session.attributes.Title}</div> */}
-          
-          {/* 
-          <div>Tags: {session.attributes.Tags}</div>
-          <div>Duration: {session.attributes.Duration}</div>
-          <div>Audience: {session.attributes.Audience}</div> */}
           
           <div>
             <div className="mb-2">
@@ -273,5 +294,6 @@ export const SessionDetail = () => {
       </div>
 
     </div>
+  </div>
   );
 };

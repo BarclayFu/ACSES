@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { Session } from './Session';
 import { GoChevronRight } from "react-icons/go";
 import { GoChevronDown } from "react-icons/go";
+import { useNavigate, Link } from 'react-router-dom';
+
 
 export const ProgramDetail = () => {
   const [program, setProgram] = useState(null);
@@ -10,6 +12,13 @@ export const ProgramDetail = () => {
   const [isExpanded, setIsExpanded] = useState(true)
   const [isOverviewExpanded, setIsOverviewExpanded] = useState(true);
   const [isWhatIncludedExpanded, setIsWhatIncludedExpanded] = useState(true);
+  const navigate = useNavigate();
+
+  // 创建一个函数来处理后退操作
+  const goBack = () => {
+    navigate(-1); // 后退
+  };
+  
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
@@ -29,6 +38,13 @@ export const ProgramDetail = () => {
     return <div>Loading...</div>;
   }
 
+  // 简化的面包屑数组，您可以根据实际的路由结构进行调整
+  const breadcrumbs = [
+    { name: 'Programs', link: '/' },
+    { name: program.attributes.Title, link: `/programs/${programId}` },
+    // 假设您有更多的层级，可以继续添加
+  ];
+  
   const parseOverview = (overview) => {
     return overview.map((block) => {
       if (block.type === 'paragraph') {
@@ -110,7 +126,30 @@ export const ProgramDetail = () => {
   };
 
   return (
+  <div className="container mx-auto">
+    <nav aria-label="breadcrumb">
+      <ol className="flex items-center space-x-2">
+        {breadcrumbs.map((crumb, index) => (
+          <React.Fragment key={index}>
+            {index !== 0 && <GoChevronRight />} {/* 在列表项前添加箭头 */}
+            <li className={`flex items-center ${index === 0 ? 'font-medium' : 'text-indigo-600 hover:text-indigo-700 hover:underline'}`}>
+              {index === breadcrumbs.length - 1 ? (
+                <span className="text-gray-500">{crumb.name}</span>
+              ) : (
+                <Link to={crumb.link}>{crumb.name}</Link>
+              )}
+            </li>
+          </React.Fragment>
+        ))}
+      </ol>
+    </nav>
+    {/* <div className="p-6">
+      <button onClick={goBack} className="go-back-button">
+        Go Back
+      </button>
+    </div> */}
     <div className="w-full bg-[#ffffff] flex container" style={{margin:"auto",borderRadius:20,overflow:"hidden",marginTop:20,marginBottom:20}}>
+       
       <div className="bg-[#ffffff] w-2/3" >
         <div className="p-6">
           <div className="flex flex-col items-center w-full">
@@ -194,6 +233,6 @@ export const ProgramDetail = () => {
 
     
 
-    
+  </div>
   );
 };
