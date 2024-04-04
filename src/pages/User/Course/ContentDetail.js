@@ -32,7 +32,7 @@ export const ContentDetail = () => {
       className="mb-6 p-4 border-2 border-blue-500 rounded-lg"
       style={{ margin: "20px auto", maxWidth: 1080}}
     >
-      <h1>{detail.attributes.Title}</h1>
+      <h1><strong>{detail.attributes.Title}</strong></h1>
 
       {detail.attributes.Type === 'Video' && (
          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
@@ -56,15 +56,21 @@ export const ContentDetail = () => {
             height="600px"
             title="PDF Viewer"
           ></iframe>
-          <a href={`${detail.attributes.Material.data[0].attributes.url}`} target="_blank">View PDF</a>
+          <button className="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+          <a href={`${detail.attributes.Material.data[0].attributes.url}`} target="_blank">View PDF in new tab</a>
+          </button>
         </div>
         
       )}
 
       {detail.attributes.Type === 'PowerPoint' && (
-        <button className="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-          <a href={`${detail.attributes.Material.data[0].attributes.url}`} target="_blank">Press Me to download PPT</a>
-        </button>
+        <div>
+          <p>PowerPoint files are not supported for online viewing, please click the button below.</p>
+          <button className="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
+            <a href={`${detail.attributes.Material.data[0].attributes.url}`} target="_blank">Press Me to download PPT</a>
+          </button>
+        </div>
+
         
       )}
 
