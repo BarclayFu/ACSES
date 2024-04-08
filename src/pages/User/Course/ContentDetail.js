@@ -66,15 +66,6 @@ export const ContentDetail = () => {
         
       )}
 
-      {detail.attributes.Type === 'PowerPoint' && (
-        <div>
-          <p>PowerPoint files are not supported for online viewing, please click the button below.</p>
-          <button className="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">
-            <a href={`${detail.attributes.Material.data[0].attributes.url}`} target="_blank">Press Me to download PPT</a>
-          </button>
-        </div>
-      )}
-
       {detail.attributes.Type === 'Word' && (
         <div>
           <iframe
@@ -82,6 +73,16 @@ export const ContentDetail = () => {
             width="100%"
             height="600px"
             title="Word Viewer"
+          ></iframe>
+        </div>
+      )}
+
+      {detail.attributes.Type === 'PowerPoint' && (
+        <div>
+          <iframe
+            src={getWordViewerUrl(detail.attributes.Material.data[0].attributes.url)}
+            width="100%"
+            height="600px"
           ></iframe>
         </div>
       )}
