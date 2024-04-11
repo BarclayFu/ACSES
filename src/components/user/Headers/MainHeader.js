@@ -3,12 +3,10 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { MobileMenu } from "./MobileMenu";
 import { HiAcademicCap } from "react-icons/hi2";
 export const MainHeader = () => {
   const userAccessToken = localStorage.getItem("jwt");
   const [searchValue, setSearchValue] = useState("");
-  const [mobileMenu, setMobileMenu] = useState(false);
   const [mobileSerach, setMobileSearch] = useState(false);
   const [profile, setProfile] = useState();
 
@@ -35,16 +33,7 @@ export const MainHeader = () => {
     <div className="w-full h-20 text-gray-100  px-2 sm:px-0 ">
       <div className="container mx-auto flex w-full h-full items-center justify-between space-x-3 relative">
         <div className="flex items-center space-x-3">
-          {/* mobile left side menu */}
-          <div
-            className="sm:hidden block"
-            onClick={() => setMobileMenu(!mobileMenu)}
-          >
-          </div>
-          {/* mobile menu */}
-          {mobileMenu && (
-            <MobileMenu setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
-          )}
+
           {/* logo area */}
           <div className="xl:min-w-[300px]">
             <Link to="/">
@@ -108,28 +97,6 @@ export const MainHeader = () => {
 
         </div>
       </div>
-      {/* this form for mobile devices */}
-      {/* <div className={mobileSerach ? "block" : "hidden"}>
-        <form
-          className="sm:hidden block w-full absolute top-3 left-0"
-          onSubmit={searchHeandler}
-        >
-          <div className="flex items-center bg-gray-200 rounded-md ring-1 ring-emerald-800 mx-2">
-            <input
-              type="search"
-              name="search"
-              value={searchValue}
-              placeholder="Search Product..."
-              className="bg-transparent text-black px-2 py-2 focus:outline-none"
-              onChange={(e) => setSearchValue(e.target.value)}
-            />
-
-            <button type="submit" className="pr-3 text-lg text-[#f85606]">
-              <BsSearch />
-            </button>
-          </div>
-        </form>
-      </div> */}
     </div>
   );
 };
