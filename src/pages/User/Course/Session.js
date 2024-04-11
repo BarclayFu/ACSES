@@ -15,7 +15,8 @@ export const Session = ({ programId }) => {
     })
     .then(response => response.json())
     .then(data => {
-      setSessions(data.data);
+     const sortedSessions = data.data.sort((a, b) => a.id - b.id);
+      setSessions(sortedSessions);
     })
     .catch(error => console.error('Error fetching sessions:', error));
   }, [programId]);
