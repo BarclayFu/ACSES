@@ -30,7 +30,7 @@ export const userAuthApi = apiSlice.injectEndpoints({
     }),
     userLoggedIn: builder.query({
       query: () => ({
-        url: "https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/users/me",
+        url: "https://vivid-bloom-0edc0dd8df.strapiapp.com/api/users/me",
         headers: {
           Authorization: `Bearer ${
             localStorage.jwt
