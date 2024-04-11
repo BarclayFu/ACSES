@@ -16,7 +16,7 @@ export const MainHeader = () => {
   const navigate = useNavigate();
   useEffect(() => {
     
-    fetch('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
+    fetch('https://vivid-bloom-0edc0dd8df.strapiapp.com/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
       headers: {
         'Authorization': `Bearer ${userAccessToken}`
       }

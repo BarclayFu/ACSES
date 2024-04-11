@@ -11,7 +11,7 @@ export const Program = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/programs', {
+    fetch('https://vivid-bloom-0edc0dd8df.strapiapp.com/api/programs', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -29,7 +29,7 @@ export const Program = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    let url = 'https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/programs?populate=Cover';
+    let url = 'https://vivid-bloom-0edc0dd8df.strapiapp.com/api/programs?populate=Cover';
 
     if (selectedGrade !== 'Audience') {
       url += `&filters[Audience][$eq]=${selectedGrade}`;

@@ -8,7 +8,7 @@ export const Content = ({ sessionId }) => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch(`https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
+    fetch(`https://vivid-bloom-0edc0dd8df.strapiapp.com/api/contents?populate=*&filters[session][id][$eq]=${sessionId}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

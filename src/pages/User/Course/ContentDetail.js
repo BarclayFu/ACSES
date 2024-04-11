@@ -13,7 +13,7 @@ export const ContentDetail = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch(`https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/contents/${contentId}?populate=Material`, {
+    fetch(`https://vivid-bloom-0edc0dd8df.strapiapp.com/api/contents/${contentId}?populate=Material`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

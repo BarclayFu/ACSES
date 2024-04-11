@@ -11,7 +11,7 @@ export const Profile = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    fetch('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
+    fetch('https://vivid-bloom-0edc0dd8df.strapiapp.com/api/users/me?populate=Avatar&populate=Background', { // 修改这个URL为你的API地址
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -33,7 +33,7 @@ export const Profile = () => {
       return;
     }
     const token = localStorage.getItem('jwt');
-    axios.post('https://pretty-prosperity-17e0b1a4eb.strapiapp.com/api/auth/change-password', {
+    axios.post('https://vivid-bloom-0edc0dd8df.strapiapp.com/api/auth/change-password', {
       currentPassword: currentPassword,
       password: newPassword,
       passwordConfirmation: confirmPassword,
