@@ -16,7 +16,14 @@ export const Program = () => {
         'Authorization': `Bearer ${token}`
       }
     })
-    .then(response => response.json())
+    .then(response => {
+      if(response.status === 401) {
+        localStorage.removeItem('jwt'); // 清除 JWT
+        navigate('/login'); // 重定向到登录页面
+        return;
+      }
+      return response.json();
+    })
     .then(data => {
       const allGrades = Array.from(new Set(data.data.map(program => program.attributes.Audience).filter(audience => audience)));
       const allFocusAreas = Array.from(new Set(data.data.map(program => program.attributes.FocusArea).filter(focusArea => focusArea)));

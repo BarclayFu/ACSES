@@ -4,9 +4,10 @@ import { BsSearch } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { HiAcademicCap } from "react-icons/hi2";
+import { userLoggedOut } from "../../../features/auth/userAuthSlice";
+import { toast } from "react-hot-toast";
 export const MainHeader = () => {
   const userAccessToken = localStorage.getItem("jwt");
-  const [searchValue, setSearchValue] = useState("");
   const [mobileSerach, setMobileSearch] = useState(false);
   const [profile, setProfile] = useState();
 
@@ -112,7 +113,8 @@ const LogoutButton = () => {
     // 清除认证信息，如JWT或cookies
     localStorage.removeItem('jwt'); // 假设JWT存储在localStorage中
     // 或者：cookies.remove('jwt'); // 如果使用cookies
-
+    dispatch(userLoggedOut());
+    toast.success("Logout SuccessFull");
     // 重定向到登录页面或其他页面
     navigate('/login');
   };
